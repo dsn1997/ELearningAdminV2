@@ -1,0 +1,742 @@
+﻿{
+   "CodeGenerationMode": 2,
+   "ContextClassName": "IIGDbContext",
+   "ContextNamespace": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "MinimumProductVersion": "2.6.0",
+   "ModelNamespace": null,
+   "OutputContextPath": null,
+   "OutputPath": "Models",
+   "PreserveCasingWithRegex": true,
+   "ProjectRootNamespace": "IIG.Core",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 2,
+   "SelectedToBeGenerated": 0,
+   "T4TemplatePath": null,
+   "Tables": [
+      {
+         "Name": "[dbo].[account_bank]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[address]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[address_translation]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[admin_group]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[admin_group_permission]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[admin_refresh_token]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[admin_user]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[admin_user_group]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[admin_verification_codes]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[answer]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[answer_history]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ApplePaymentInfo]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[article]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[banner]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[category]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[category_area]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[category_translation]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[course]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[course_detail]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[course_detail_translation]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[course_price]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[course_price_translation]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[course_teacher]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[course_teacher_translation]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[course_test]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[course_test_unit]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[course_time_on_task]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[course_translation]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CourseDescriptionDetails]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CourseDescriptions]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CourseScorings]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[dictionary]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[dictionary_translation]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[discount]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[discount_translation]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[discount_web_user]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Districts]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[exam_tool_category]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ext_category_translation]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[feedback]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[feedback_translation]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[file]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[file_type]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[GroupScores]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[GroupScorings]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[guiding_mocktest]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[guiding_mocktest_translation]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[keycode_choose]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[keycode_result]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[language_tags]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[left_section]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[lesson]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[live_class_booking]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[live_class_detail]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[live_class_detail_test]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[live_class_type]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[live_customer_support]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[live_lesson_detail]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[live_lesson_detail_adviser]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[live_lesson_detail_attendance]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[live_lesson_mission]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[live_lesson_mission_questionnaire]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[LiveClassScorings]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[mocktest]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[mocktest_course_price]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[mocktest_entrance_detail]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[mocktest_free_detail]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[mocktest_group]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[mocktest_key_code]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[mocktest_object]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[mocktest_part]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[mocktest_part_questionnaire]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[mocktest_section]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[mocktest_translation]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[mocktest_type]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[news]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[news_translation]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[notification]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[notification_translation]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[notification_web_user]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[order]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[order_details]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[OTPConfigs]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[payment_transaction]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[permission]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[PhonemeGuides]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[policy_mocktest_setting]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[policy_mocktest_setting_translation]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Provinces]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[question]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[question_history]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[question_translation]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[question_translation_history]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[questionnaire]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[questionnaire_group]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[QuestionTags]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ranking_score]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[receive_invoice]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[review]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Schools]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[score_comment]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[score_detail]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ScoreRanges]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ScoringAssignees]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ScoringRanges]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[ScoringTableClones]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[SeftStudyProgramClasses]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[SeftStudyProgramClassTranslations]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[SeftStudyPrograms]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[SeftStudyProgramTranslations]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[SelfCourseActionHistories]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[setting]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[showing_area]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[social_media]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[SpeakingWritingChooses]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[SpeakingWritingResults]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[SpeakingWritingScoringResults]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[step]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[step_questionnaire]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[store_course]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_banner]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_category_detail]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_category_detail_section]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_course_class]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_course_class_detail]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_course_class_history]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_course_class_infor]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_course_class_infor_type]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_course_class_time_on_task]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_course_class_translation]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_course_price_section]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_course_study]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_course_study_translation]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_faq]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_home_page_infor]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_mocktest_entrance_translation]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_mocktest_free_translation]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_platform]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_question_type]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_student]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_student_review]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_teacher]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_teacher_achievement]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[t_teacher_certificate]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Tags]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[toefl_challenge_contest]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[toefl_challenge_contest_mocktest]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[toefl_challenge_ranking_score]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[toefl_challenge_ranking_score_mocktest_type]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[toefl_challenge_score_comment]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[toefl_challenge_user]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[transfer_exam_tool_history]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TransferExamToolManages]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[unit]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[unit_test]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[unit_test_questionnaire]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[UserCourseExcersiceChooses]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[UserCourseExcersiceResults]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[verification_codes]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[web_user]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[web_user_choose]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[web_user_course_learning_plan]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[web_user_course_test_choose]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[web_user_course_test_result]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[web_user_lesson_mission_choose]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[web_user_lesson_mission_result]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[web_user_live_test_choose]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[web_user_live_test_result]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[web_user_practice_history]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[web_user_register]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[web_user_unit_test_choose]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[web_user_unit_test_result]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[WebUserDevices]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[questionnaire_question_view]",
+         "ObjectType": 3
+      }
+   ],
+   "UiHint": null,
+   "UncountableWords": null,
+   "UseAsyncStoredProcedureCalls": true,
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDatabaseNamesForRoutines": true,
+   "UseDateOnlyTimeOnly": false,
+   "UseDbContextSplitting": false,
+   "UseDecimalDataAnnotationForSprocResult": true,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseInternalAccessModifiersForSprocsAndFunctions": false,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UsePrefixNavigationNaming": false,
+   "UseSchemaFolders": false,
+   "UseSchemaNamespaces": false,
+   "UseSpatial": false,
+   "UseT4": false,
+   "UseT4Split": false
+}

@@ -1,0 +1,17 @@
+F:\Work\E-LearningAdminV2\IIG.EntityFrameworkCore\obj\Debug\net8.0\IIG.EntityFrameworkCore.csproj.AssemblyReference.cache
+F:\Work\E-LearningAdminV2\IIG.EntityFrameworkCore\obj\Debug\net8.0\IIG.EntityFrameworkCore.GeneratedMSBuildEditorConfig.editorconfig
+F:\Work\E-LearningAdminV2\IIG.EntityFrameworkCore\obj\Debug\net8.0\IIG.EntityFrameworkCore.AssemblyInfoInputs.cache
+F:\Work\E-LearningAdminV2\IIG.EntityFrameworkCore\obj\Debug\net8.0\IIG.EntityFrameworkCore.AssemblyInfo.cs
+F:\Work\E-LearningAdminV2\IIG.EntityFrameworkCore\obj\Debug\net8.0\IIG.EntityFrameworkCore.csproj.CoreCompileInputs.cache
+F:\Work\E-LearningAdminV2\IIG.EntityFrameworkCore\bin\Debug\net8.0\IIG.EntityFrameworkCore.deps.json
+F:\Work\E-LearningAdminV2\IIG.EntityFrameworkCore\bin\Debug\net8.0\IIG.EntityFrameworkCore.runtimeconfig.json
+F:\Work\E-LearningAdminV2\IIG.EntityFrameworkCore\bin\Debug\net8.0\IIG.EntityFrameworkCore.dll
+F:\Work\E-LearningAdminV2\IIG.EntityFrameworkCore\bin\Debug\net8.0\IIG.EntityFrameworkCore.pdb
+F:\Work\E-LearningAdminV2\IIG.EntityFrameworkCore\bin\Debug\net8.0\IIG.Core.dll
+F:\Work\E-LearningAdminV2\IIG.EntityFrameworkCore\bin\Debug\net8.0\IIG.Core.pdb
+F:\Work\E-LearningAdminV2\IIG.EntityFrameworkCore\obj\Debug\net8.0\IIG.Enti.882E1F75.Up2Date
+F:\Work\E-LearningAdminV2\IIG.EntityFrameworkCore\obj\Debug\net8.0\IIG.EntityFrameworkCore.dll
+F:\Work\E-LearningAdminV2\IIG.EntityFrameworkCore\obj\Debug\net8.0\refint\IIG.EntityFrameworkCore.dll
+F:\Work\E-LearningAdminV2\IIG.EntityFrameworkCore\obj\Debug\net8.0\IIG.EntityFrameworkCore.pdb
+F:\Work\E-LearningAdminV2\IIG.EntityFrameworkCore\obj\Debug\net8.0\IIG.EntityFrameworkCore.genruntimeconfig.cache
+F:\Work\E-LearningAdminV2\IIG.EntityFrameworkCore\obj\Debug\net8.0\ref\IIG.EntityFrameworkCore.dll
