@@ -44,6 +44,29 @@ namespace IIG.EntityFrameworkCore.EntityFramework.UnitOfWork
             _txs[key] = holder;
             return holder;
         }
+        public async Task SaveChangeAsync(Guid uowId, CancellationToken cancellationToken = default)
+        {
+            var keys = _txs.Keys.Where(k => k.UowId == uowId).ToList();
+            foreach (var key in keys)
+            {
+                if (_txs.TryGetValue(key, out var tx))
+                {
+                    await tx.DbContext.SaveChangesAsync(cancellationToken);
+                }
+            }
+        }
+
+        public  void SaveChange(Guid uowId, CancellationToken cancellationToken = default)
+        {
+            var keys = _txs.Keys.Where(k => k.UowId == uowId).ToList();
+            foreach (var key in keys)
+            {
+                if (_txs.TryGetValue(key, out var tx))
+                {
+                     tx.DbContext.SaveChanges();
+                }
+            }
+        }
 
         public async Task CommitTransactionsAsync(Guid uowId, CancellationToken cancellationToken = default)
         {
@@ -52,6 +75,7 @@ namespace IIG.EntityFrameworkCore.EntityFramework.UnitOfWork
             {
                 if (_txs.TryGetValue(key, out var tx))
                 {
+                    await tx.DbContext.SaveChangesAsync(cancellationToken);
                     await tx.Transaction.CommitAsync(cancellationToken);
                 }
             }
@@ -64,45 +88,49 @@ namespace IIG.EntityFrameworkCore.EntityFramework.UnitOfWork
             {
                 if (_txs.TryGetValue(key, out var tx))
                 {
-                     tx.Transaction.Commit();
+                    tx.DbContext.SaveChanges();
+                    tx.Transaction.Commit();
                 }
             }
         }
 
         public async Task RollbackTransactionsAsync(Guid uowId)
         {
-            var keys = _txs.Keys.Where(k => k.EndsWith($"|{uowId}")).ToList();
+            var keys = _txs.Keys.Where(k => k.UowId == uowId).ToList();
             foreach (var key in keys)
             {
-                if (_txs.TryRemove(key, out var tx))
+                if (_txs.Remove(key, out var tx))
                 {
-                    try { await tx.RollbackAsync(); } catch { /* swallow */ }
-                    try { tx.Dispose(); } catch { }
+                    try { await tx.Transaction.RollbackAsync(); } catch { /* swallow */ }
+                    try { tx.Transaction.Dispose(); } catch { }
+                    try { tx.DbContext.Dispose(); } catch { }
                 }
             }
         }
 
         public void RollbackTransactions(Guid uowId)
         {
-            var keys = _txs.Keys.Where(k => k.EndsWith($"|{uowId}")).ToList();
+            var keys = _txs.Keys.Where(k => k.UowId == uowId).ToList();
             foreach (var key in keys)
             {
-                if (_txs.TryRemove(key, out var tx))
+                if (_txs.Remove(key, out var tx))
                 {
-                    try { tx.Rollback(); } catch { /* swallow */ }
-                    try { tx.Dispose(); } catch { }
+                    try { tx.Transaction.Rollback(); } catch { /* swallow */ }
+                    try { tx.Transaction.Dispose(); } catch { }
+                    try { tx.DbContext.Dispose(); } catch { }
                 }
             }
         }
 
         public void ReleaseTransactions(Guid uowId)
         {
-            var keys = _txs.Keys.Where(k => k.EndsWith($"|{uowId}")).ToList();
+            var keys = _txs.Keys.Where(k => k.UowId == uowId).ToList();
             foreach (var key in keys)
             {
-                if (_txs.TryRemove(key, out var tx))
+                if (_txs.Remove(key, out var tx))
                 {
-                    try { tx.Dispose(); } catch { }
+                    try { tx.Transaction.Dispose(); } catch { }
+                    try { tx.DbContext.Dispose(); } catch { }
                 }
             }
         }

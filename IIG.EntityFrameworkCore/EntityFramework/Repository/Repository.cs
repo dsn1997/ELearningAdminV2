@@ -1,5 +1,6 @@
 ﻿using IIG.Core.Entities;
 using IIG.Core.Interface;
+using IIG.Core.Interface.Repository.Dtos;
 using IIG.Core.Interface.UnitOfWork;
 using IIG.Core.Repository;
 using Microsoft.EntityFrameworkCore;
@@ -17,11 +18,11 @@ namespace IIG.EntityFrameworkCore.EntityFramework.Repository
 {
     public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     {
-        protected readonly IDbContextFactory<DbContext> _dbContextFactory;
+        protected readonly IDbContextFactory<IIGDbContext> _dbContextFactory;
         protected readonly IUnitOfWorkManager _uowManager;
         protected readonly IActiveTransactionProvider _transactionProvider;
 
-        public Repository(IDbContextFactory<DbContext> dbContextFactory, IUnitOfWorkManager uowManager, IActiveTransactionProvider transactionProvider)
+        public Repository(IDbContextFactory<IIGDbContext> dbContextFactory, IUnitOfWorkManager uowManager, IActiveTransactionProvider transactionProvider)
         {
             _dbContextFactory = dbContextFactory;
             _uowManager = uowManager;
@@ -29,40 +30,30 @@ namespace IIG.EntityFrameworkCore.EntityFramework.Repository
         }
         private static readonly ConcurrentDictionary<Type, bool> EntityIsDbQuery =
          new ConcurrentDictionary<Type, bool>();
-        protected string DbContextName => _dbContext.GetType().FullName;
 
-        protected IDbContextTransaction GetOrCreateActiveTransaction()
+        private EfTransactionHolder GetOrCreateHolder()
         {
-            var uow = _uowManager.Current ?? throw new InvalidOperationException("Repository must be used inside a UnitOfWork.");
-            // factory: begin a new IDbContextTransaction using EF Core API
-            return _transactionProvider.GetOrCreate(DbContextName, uow.Id, () =>
-            {
-                // ensure DB connection open & create EF transaction
-                if (_dbContext.Database.GetDbConnection().State != System.Data.ConnectionState.Open)
-                    _dbContext.Database.OpenConnection();
-                // Use EF to begin transaction so EF knows about it
-                var trx = _dbContext.Database.BeginTransaction();
-                return trx;
-            });
+            var uow = _uowManager.Current
+                ?? throw new Exception("Repository must run inside UoW.");
+
+            return _transactionProvider.GetOrCreate(uow.Id, _dbContextFactory);
+          
         }
 
 
         protected async Task<DbSet<TEntity>> GetTableAsync()
         {
-            var tx = GetOrCreateActiveTransaction();
-            _dbContext.Database.UseTransaction(tx.GetDbTransaction());
-            return _dbContext.Set<TEntity>();
-            
+            var holder = GetOrCreateHolder();
+            return holder.DbContext.Set<TEntity>();
+
         }
 
-        protected  DbSet<TEntity> GetTable()
+        protected DbSet<TEntity> GetTable()
         {
-            var tx = GetOrCreateActiveTransaction();
-            _dbContext.Database.UseTransaction(tx.GetDbTransaction());
-            return _dbContext.Set<TEntity>();
-
+            var holder = GetOrCreateHolder();
+            return holder.DbContext.Set<TEntity>();
         }
-       
+
         private IQueryable<TEntity> GetQueryable()
         {
             var table = GetTable();
