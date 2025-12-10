@@ -1,42 +1,12 @@
 using IIG.Core.Common.Enums;
+using IIG.Core.Common.Models.Files;
 
 namespace IIG.Core.Common.ConfigureModels
 {
     public static class Constants
     {
+        public const string DbConnectionStrings = "DbConnectionStrings";
         public const string BaseUrlClassin = "https://www.eeo.cn/client/invoke/index.html";
-        public const string DetailDateFormat = "ddMMyyyy hh:mm:ss";
-        public const string DateFormatExcel = "_ddMMyyyy_hh:mm:ss";
-
-        public static class FileType
-        {
-            public const string ExcelContentType = "application/vnd.ms-excel";
-            public const string OctetStream = "application/octet-stream";
-            public const string ExcelXlsx = "application/xlsx";
-        }
-
-        public static class ImportFileResponseHeader
-        {
-            public const string ImportFileFail = "ImportFileFail";
-        }
-
-        public static class FirebaseNotification
-        {
-            public const string Navigate = "Navigate";
-            public const string NavigateType3 = "NavigateType3";
-            public const string NavigateType6 = "NavigateType6";
-            public const string NavigateType7 = "NavigateType7";
-            public const string NavigateType8 = "NavigateType8";
-            public const string NavigateType9 = "NavigateType9";
-            public const string NavigateType10 = "NavigateType10";
-            public const string NavigateType11 = "NavigateType11";
-            public const string NavigateType12 = "NavigateType12";
-            public const string NavigateType13 = "NavigateType13";
-            public const string NavigateType14 = "NavigateType14";
-            public const string NavigateType15 = "NavigateType15";
-            public const string PurchaseHistory = "PurchaseHistory";
-            public const string ChannelId = "channelId";
-        }
 
         public static class PrefixCategory
         {
@@ -54,6 +24,23 @@ namespace IIG.Core.Common.ConfigureModels
             public const string TiengViet = "vi-VN";
             public const string TiengAnh = "en-US";
             public const string TiengHan = "ko-KR";
+        }
+
+        public static class FirebaseNotification
+        {
+            public const string Navigate = "Navigate";
+            public const string NavigateType3 = "NavigateType3";
+            public const string NavigateType5 = "NavigateType5";
+            public const string NavigateType6 = "NavigateType6";
+            public const string NavigateType7 = "NavigateType7";
+            public const string NavigateType8 = "NavigateType8";
+            public const string NavigateType9 = "NavigateType9";
+            public const string NavigateType10 = "NavigateType10";
+            public const string NavigateType11 = "NavigateType11";
+            public const string NavigateType12 = "NavigateType12";
+            public const string NavigateType13 = "NavigateType13";
+            public const string NavigateType14 = "NavigateType14";
+            public const string PurchaseHistory = "PurchaseHistory";
         }
 
         public static class RequestHeaderKey
@@ -78,24 +65,77 @@ namespace IIG.Core.Common.ConfigureModels
             public const string RedisToeflChallengeMocktest = "RedisToeflChallengeMocktest";
             public const string RedisToeflChallengeContest = "RedisToeflChallengeContest";
             public const string RedisToeflChallengeCourseSuggestion = "RedisToeflChallengeCourseSuggestion";
-            public const string RedisCourseScoringFilter = "RedisCourseScoringFilter:{0}";
-            public const string RedisLiveClassScoringFilter = "RedisLiveClassScoringFilter:{0}";
 
-            //category menu 
+            //category redis key
             public const string RedisCategoryMenuTop = "RedisCategoryMenuTop:{0}";
             public const string RedisCategoryMenu = "RedisCategoryMenu:{0}";
 
-            public const string RedisMenuCategoryDetail = "RedisMenuCategoryDetail:{0}";
-            public const string RedisMenuTTeacher = "RedisTTeacher";
-            public const string RedisMenuTStudent = "RedisTStudent";
-            public const string RedisMenuHomePageInfo = "RedisMenuHomePageInfo:{0}";
+            public const string RedisMenuCategoryDetail = "RedisMenuCategoryDetail";
+            public const string RedisCategoryDetail = "RedisCategoryDetail";
+            public const string RedisMenuHomePageInfo = "RedisMenuHomePageInfo";
+            public const string RedisMenuBanner = "RedisMenuBanner";
 
-            public static string GetPrefixRedisKey(string key)
+            //mocktest redis key
+            public const string RedisMockTestModel = "RedisMockTestModel:{0}";
+            public const string RedisMockTestSectionModel = "RedisMockTestSectionModel:{0}";
+
+            //mocktest keycode redis key
+            public const string RedisMockTestKeyCodeModel = "RedisMockTestKeyCodeModel:{0}";
+            public const string RedisMockTestKeyCodeAnswer = "RedisMockTestKeyCodeAnswer:{0}";
+            public const string RedisMockTestKeyCodeCourseScoringTuple = "RedisMockTestKeyCodeCourseScoringTuple:{0}";
+            public const string RedisMockTestKeyCodeDetailByCookie = "RedisMockTestKeyCodeDetailByCookie:{0}";
+            public const string RedisMockTestKeyCodeExaminingCount = "RedisMockTestKeyCodeExaminingCount:{0}";
+
+            //live test redis key
+            public const string RedisLiveClassDetail = "RedisLiveClassDetail:{0}";
+            public const string RedisLiveClassTestDetail = "RedisLiveClassTestDetail:{0}";
+            public const string RedisLiveClassTestAnswer = "RedisLiveClassTestAnswer:{0}";
+            public const string RedisLiveClassTestQuestionType = "RedisLiveClassTestQuestionType:{0}";
+
+            public class TTeacher
             {
-                var array = key.Split(':');
-                return array.Length > 1 ? array[0] : key;
+                public const string MenuTTeacher = "RedisTTeacher_MenuTeacher";
+                public const string Detail = "RedisTTeacher_Detail:{0}";
+
             }
 
+            public class TStudent
+            {
+                public const string MenuTStudent = "RedisTStudent_MenuStudent";
+                public const string Detail = "RedisTStudent_Detail:{0}";
+            }
+            public class TStudentReview
+            {
+                public const string Detail = "RedisTStudentReview_Detail:{0}";
+            }
+
+            public class Faq
+            {
+                public const string Detail = "RedisFaq_Detail:{0}";
+            }
+
+            public class SeftStudyProgram
+            {
+                public const string RedisSeftStudyProgramDetail = "SeftStudyProgramDetail:{0}";
+
+                public const string RedisSeftStudyProgramSuggestByMocktest = "RedisSeftStudyProgramSuggestByMocktest:{0}";
+                public const string RedisSeftStudyProgramSuggestByTag = "RedisSeftStudyProgramSuggestByTag:{0}";
+                public const string RedisSeftStudyProgramExamToolByCategoryPaging = "RedisSeftStudyProgramExamToolByCategoryPaging";
+            }
+            public class Course
+            {
+                public const string RedisCourse_Description = "RedisCourse_Description:{0}";
+            }
+
+            public class MockTestWrapperGroup
+            {
+                public const string All = "Redis_MenuMockTestWrapperGroup";
+            }
+            public class MockTestWrapper
+            {
+                public const string ByGroupId = "RedisCourse_MenuMockTestWrapper_ByGroupId:{0}";
+            }
+            public static string UnitTestRemainingTime(Guid unitTestId, Guid userId) => $"unitTestId/{unitTestId}/userId/{userId}";
         }
         public static class AutoGenerateKeyCode
         {
@@ -122,43 +162,41 @@ namespace IIG.Core.Common.ConfigureModels
             public const string QueryInsert = @"INSERT INTO [dbo].[permission]([id] ,[name] ,[description] ,[parent_id] ,[created] ,[modified] ,[is_permission]) VALUES ('{0}', '{1}', NULL, '{2}', GETUTCDATE(), GETUTCDATE(), {3});";
         }
 
-        //public static class FileSettings
-        //{
-        //    public static readonly List<EFileTypeIdentifier> ListImageType = new()
-        //    {
-        //        EFileTypeIdentifier.ImageCourse,
-        //        EFileTypeIdentifier.ImageUser,
-        //        EFileTypeIdentifier.ImageCourseTeacher,
-        //        EFileTypeIdentifier.ImageNews,
-        //        EFileTypeIdentifier.PracticeImages,
-        //        EFileTypeIdentifier.DefaultImageFiles,
-        //        EFileTypeIdentifier.MockTestImage,
-        //    };
+        public static class FileSettings
+        {
+            public static readonly List<EFileTypeIdentifier> ListImageType = new()
+            {
+                EFileTypeIdentifier.ImageCourse,
+                EFileTypeIdentifier.ImageUser,
+                EFileTypeIdentifier.ImageCourseTeacher,
+                EFileTypeIdentifier.ImageNews,
+                EFileTypeIdentifier.PracticeImages,
+                EFileTypeIdentifier.DefaultImageFiles,
+                EFileTypeIdentifier.MockTestImage,
+            };
 
-        //    public const string KeyReplaceYear = "{year}";
-        //    public const string KeyReplaceMonth = "{month}";
-        //    public const string KeyReplaceId = "{id}";
-        //    public const string KeyReplaceUserInput = "{userinput}";
-        //    public const string KeyReplaceTimestamp = "{timestamp}";
+            public const string KeyReplaceYear = "{year}";
+            public const string KeyReplaceMonth = "{month}";
+            public const string KeyReplaceId = "{id}";
+            public const string KeyReplaceUserInput = "{userinput}";
+            public const string KeyReplaceTimestamp = "{timestamp}";
 
-        //    public const string FileIsEmptyKey = "file_is_empty_key";
-        //    public const string FileTypeIsNotConfiguredKey = "file_type_is_not_configured_key";
+            public const string FileIsEmptyKey = "file_is_empty_key";
+            public const string FileTypeIsNotConfiguredKey = "file_type_is_not_configured_key";
 
-        //    public const string RootPathFileStorage = "./data";
-        //    public static string SubFolderPublic = "public"; //set in appSetting.json, config in ServiceCoreExtensions
-        //    public static string SubFolderPrivate = "private";  //set in appSetting.json, config in ServiceCoreExtensions
+            public const string RootPathFileStorage = "./data";
+            public const string SubFolderPublic = "public-dev";
+            public const string SubFolderPrivate = "private-dev";
 
-        //    public const string FileExtensionNotValid = "{0}_must_be_{1}";
-        //    public const string FileSizeNotValid = "{0}_must_be_less_than_{1}MB";
-        //}
+            public const string FileExtensionNotValid = "{0}_must_be_{1}";
+            public const string FileSizeNotValid = "{0}_must_be_less_than_{1}MB";
+        }
 
         public static class Common
         {
             public const int VerifyCodeLength = 6;
-            public const string Comma = ",";
-            public const string Dash = "-";
             public const string DateTimeHourFormat = "dd/MM/yyyy HH:mm:ss";
-            public const string DateTimeHourNoSecondFormat = "dd/MM/yyyy HH:mm:ss";
+            public const string DateTimeHourNoSecondFormat = "dd/MM/yyyy HH:mm";
             public const string DateTimeFormat = "dd/MM/yyyy";
             public const int ImageSizeMaximum = 5 * 1024 * 1024;
             public const int HourInVN = 7;
@@ -167,9 +205,6 @@ namespace IIG.Core.Common.ConfigureModels
             {
                 EQuestionnaireType.MCQ,
                 EQuestionnaireType.ImageDragDrop,
-                EQuestionnaireType.Writing,
-                EQuestionnaireType.Record,
-                EQuestionnaireType.ReadTextALoud,
                 EQuestionnaireType.Droplist,
                 EQuestionnaireType.MCQImage,
                 EQuestionnaireType.TrueFalse,
@@ -177,6 +212,17 @@ namespace IIG.Core.Common.ConfigureModels
                 EQuestionnaireType.Matching,
                 EQuestionnaireType.MatchingImage
             };
+            public const string VNPhoneHeader = "84";
+            public const string VNPhoneRegex = "84(3|5|7|8|9|1[2|6|8|9])([0-9]{8})";
+            public const string MobilePhoneRegex = "0(3|5|7|8|9|1[2|6|8|9])([0-9]{8})";
+
+            public const string GuidRegex = "[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}";
+
+            public const string lessonOrUnitUrlE = "self-study-course/study-course/";
+            public const string lessonOrUnitUrlVN = "khoa-tu-hoc/study-course";
+            public const string CourseTestUrl = "course-test/exam/";
+            public const string FullRegexPattern = @"(" + lessonOrUnitUrlE + "|" + lessonOrUnitUrlVN + "|" + CourseTestUrl + ")(" + GuidRegex + ")";
+
 
             public static class SWSign
             {
@@ -190,8 +236,6 @@ namespace IIG.Core.Common.ConfigureModels
         {
             public const string MinimumPageNumber = "page_number_must_be_greater_than_0";
             public const string MinimumPageSize = "page_size_must_be_greater_than_0";
-
-            public const string ScoringDeadLineNotFound = "scoring_deadline_not_found";
         }
 
         public static class ValidationMessages
@@ -213,6 +257,8 @@ namespace IIG.Core.Common.ConfigureModels
                 public const string UserNameRequiredKey = "user_name_is_required_key";
                 public const string FullNameRequiredKey = "full_name_is_required_key";
                 public const string PhoneNumberRequiredKey = "phone_number_is_required_key";
+                public const string MocktestKeyCodeNotFound = "mocktest_key_code_not_found";
+                public const string MocktestListNotFound = "mocktest_list_not_found";
             }
 
             public static class RegisterUserMessage
@@ -252,6 +298,12 @@ namespace IIG.Core.Common.ConfigureModels
                 public const string GenderMaximumLengthKey = "gender_must_be_less_than_1_character_key";
                 public const string CurrentAddressMaximumLengthKey = "current_address_must_be_less_than_500_characters_key";
                 public const string JobNameMaximumLengthKey = "job_name_must_be_less_than_255_characters_key";
+
+                public const string PhoneNumberOrEmailNotFoundKey = "phone_number_or_email_not_found_key";
+                public const string ExpiredCountOTPKey = "expired_count_otp_key";
+                public const string OTPNotFoundKey = "otp_not_found_key";
+                public const string OTPNotAvailableKey = "otp_not_available_key";
+                public const string OTPExceedKey = "otp_exceed_key";
             }
 
             public static class AuthMessage
@@ -278,6 +330,12 @@ namespace IIG.Core.Common.ConfigureModels
                 public const string EmailInvalidFormatKey = "email_invalid_format_key";
                 public const string UserHasNotBeenVerifiedByEmailKey = "user_has_not_been_verified_by_email_key";
                 public const string TokenResponseIsNull = "token_response_is_null";
+                public const string NotSendVerificationCodeYetKey = "not_send_verification_code_yet_key";
+                public const string ExceedOtpSendIn24HKey = "exceed_otp_send_in_24h_key";
+                public const string PhoneInvalidFormatKey = "phone_invalid_format_key";
+
+                public const string EmailNotFoundKey = "email_not_found_key";
+                public const string PhoneNotFoundKey = "phone_not_found_key";
             }
 
             public static class RefreshTokenMessage
@@ -328,23 +386,6 @@ namespace IIG.Core.Common.ConfigureModels
 
                 public const string ContestIdIsRequiredKey = "contest_id_is_required_key";
             }
-
-            public const string RequiredIds = "required_ids";
-            public static class Writing
-            {
-
-                public static class MockTest
-                {
-                    public const string RequiredSetStrategyBeforeHandle = "required_set_strategy_before_handle";
-                    public const string TypeIsNotDefined = "type_is_not_define";
-                    public const string RequiredIdKey = "id_is_required_key";
-
-                }
-            }
-            public static class Scoring
-            {
-                public const string NotFoundScoringByAI = "scoring_by_ai_not_found";
-            }
         }
 
         public static class EmailTemplate
@@ -369,9 +410,9 @@ namespace IIG.Core.Common.ConfigureModels
             public const string EmailSubjectsToTeacher = "IIG Việt Nam - Thông báo tài khoản dạy trực tuyến Live-Class";
             public const string EmailSubjectsToStudent = "IIG Việt Nam - Thông báo tài khoản học trực tuyến Live-Class";
             public const string EmailSubjectsResultExamToeflChallenge = "TRẢ KẾT QUẢ THI {0}_Thí sinh {1}";
-            public const string EmailSubjectsResultExamToeflChallengeJuniorOver50 = "Chúc mừng kết quả bài thi trải nghiệm trực tuyến TOEFL Junior Challenge 2023 – 2024 thí sinh {0} và thông tin vòng Vòng Tuyển chọn cấp thành phố Hà Nội";
-            public const string EmailSubjectsResultExamToeflChallengeJuniorUnder50 = "Thông báo kết quả bài thi trải nghiệm thí sinh {0} & cơ hội cọ xát bản lĩnh, rèn luyện năng lực tại Vòng Tuyển chọn cấp thành phố Hà Nội.";
-            public const string EmailSubjectsResultExamToeflChallengePrimaryOver50 = "Chúc mừng kết quả bài thi trải nghiệm trực tuyến TOEFL Primary Challenge 2023 – 2024 thí sinh {0} và thông tin vòng Vòng tuyển chọn cấp thành phố Hà Nội";
+            public const string EmailSubjectsResultExamToeflChallengeJuniorOver50 = "Chúc mừng kết quả bài thi trải nghiệm trực tuyến TOEFL Junior Challenge 2024 – 2025 thí sinh {0} và thông tin vòng Vòng tuyển chọn cấp thành phố Hà Nội";
+            public const string EmailSubjectsResultExamToeflChallengeJuniorUnder50 = "Thông báo kết quả bài thi trải nghiệm thí sinh {0} & cơ hội cọ xát bản lĩnh, rèn luyện năng lực tại Vòng tuyển chọn cấp thành phố Hà Nội.";
+            public const string EmailSubjectsResultExamToeflChallengePrimaryOver50 = "Chúc mừng kết quả bài thi trải nghiệm trực tuyến TOEFL Primary Challenge 2024 – 2025 thí sinh {0} và thông tin vòng Vòng tuyển chọn cấp thành phố Hà Nội";
             public const string EmailSubjectsResultExamToeflChallengePrimaryUnder50 = "Thông báo kết quả bài thi trải nghiệm thí sinh {0} & cơ hội cọ xát bản lĩnh, rèn luyện năng lực tại Vòng tuyển chọn cấp thành phố Hà Nội.";
         }
 
@@ -379,13 +420,6 @@ namespace IIG.Core.Common.ConfigureModels
         {
             public const string FileIsNotCorrectFormat = "file_is_not_correct_format";
             public const string FileMustBeExcelFile = "file_must_be_excel_file";
-
-            public static class MocktestExcel
-            {
-                public const int CheckedAI = 1;
-                public const int UncheckedAI = 0;
-                public const string HasCheckedAI = "Có";
-            }
         }
 
         public static class VnPayResponseCode
@@ -439,6 +473,7 @@ namespace IIG.Core.Common.ConfigureModels
         {
             public const string TopicPaymentOnline = "topic.payment.online";
             public const string TopicPaymentOffline = "topic.payment.offline";
+            public const string TopicMockTestRedisToMongo = "topic.mocktest.rtm";
 
             public const string QueuePaymentOnline = "queue.payment.online";
             public const string QueuePaymentOnlineRoutingkey = "*.payment.online";
@@ -448,22 +483,58 @@ namespace IIG.Core.Common.ConfigureModels
             public const string QueuePaymentOfflineRoutingkey = "*.payment.offline";
             public const string PushMessagePaymentOfflineRoutingkey = "{0}.payment.offline";
 
-            //ScoringService
-            public class ScoringService
+            public const string QueueMockTestRedisToMongo = "queue.mocktest.rtm";
+            public const string QueueMockTestRedisToMongoRoutingkey = "*.mocktest.rtm";
+            public const string PushMessageMockTestRedisToMongoRoutingkey = "{0}.mocktest.rtm";
+
+
+            public class LiveClassTestService
             {
-                public const string TopicGetLiveClassGroupScoring = "topic.scoring.get.live.class.group";
-                public const string QueueGetLiveClassGroupScoring = "queue.scoring.get.live.class.group";
-                public const string QueueGetLiveClassGroupScoringRoutingKey = "*.scoring.get.live.class.group";
-                public const string PushMessageGetLiveClassGroupScoringRoutingKey = "{0}.scoring.get.live.class.group";
+                public class RedisToMongo
+                {
+                    public const string TopicName = "topic.live.class.test.redis.to.mongo";
+                    public const string QueueName = "queue.topic.live.class.test.redis.to.mongo";
+                    public const string RoutingKey = "*.live.class.test.redis.to.mongo";
+                    public const string PushMessagerRoutingKey = "{0}.live.class.test.redis.to.mongo";
+                }
 
-                public const string TopicGetGroupScoring = "topic.scoring.get.group.scoring";
-                public const string QueueGetGroupScoring = "queue.scoring.get.group.scoring";
-                public const string QueueGetGroupScoringRoutingKey = "*.scoring.get.group.scoring";
-                public const string PushMessageGetGroupScoringRoutingKey = "{0}.scoring.get.group.scoring";
+                public class DeleteData
+                {
+                    public const string TopicName = "topic.live.class.test.delete.data";
+                    public const string QueueName = "queue.topic.live.class.test.delete.data";
+                    public const string RoutingKey = "*.live.class.test.delete.data";
+                    public const string PushMessagerRoutingKey = "{0}.live.class.test.delete.data";
+                }
             }
-           
 
-          
+            public class KeyCodeAnswerService
+            {
+                public class SendResultExamEmail
+                {
+                    public const string TopicName = "topic.key.code.answer.send.result.exam.email";
+                    public const string QueueName = "queue.topic.key.code.answer.send.result.exam.email";
+                    public const string RoutingKey = "*.key.code.answer.send.result.exam.email";
+                    public const string PushMessagerRoutingKey = "{0}.key.code.answer.send.result.exam.email";
+                }
+                public class DeleteData
+                {
+                    public const string TopicName = "topic.key.code.answer.delete.data";
+                    public const string QueueName = "queue.topic.key.code.answer.delete.data";
+                    public const string RoutingKey = "*.key.code.answer.delete.data";
+                    public const string PushMessagerRoutingKey = "{0}.key.code.answer.delete.data";
+                }
+            }
+
+            public class CourseTestService
+            {
+                public class DeleteData
+                {
+                    public const string TopicName = "topic.course.test.service.delete.data";
+                    public const string QueueName = "queue.topic.course.test.service.delete.data";
+                    public const string RoutingKey = "*.course.test.service.delete.data";
+                    public const string PushMessagerRoutingKey = "{0}.course.test.service.delete.data";
+                }
+            }
         }
 
         public static class ClassinMessage
@@ -478,77 +549,15 @@ namespace IIG.Core.Common.ConfigureModels
             public const string DiscountNotificationMessageVNI =
                 "<p>Đừng bỏ lỡ! Bạn đã nhận được 1 voucher giảm giá <b>{{DiscountCode}}</b> nhân dịp {{DiscountName}}, mã sẽ có hiệu lực từ {{DiscountValidFromHour}} ngày {{DiscountValidFromDate}} đến {{DiscountValidToHour}} ngày {{DiscountValidToDate}}. Áp dụng ngay để không bỏ lỡ nhé.</p>";
 
-            public const string MyCourseRouter = "/khoa-hoc-cua-toi";
-            public const string ReviewedOrderNotificationTitle = "Kích hoạt khóa học";
+            public const string MyCourseRouter = "/my-course";
+            public const string ReviewedOrderNotificationTitle = "Gán đơn hàng trong admin";
             public const string ReviewedOrderNotificationMessageVNI =
-                "<p>Đơn hàng {{OrderCode}} của bạn đã được kích hoạt. Truy cập <b>Khóa học của tôi</b> để kiểm tra khóa học ngay nhé.</p>";
+                "<p>Đơn hàng {{OrderCode}} của bạn đã được kích hoạt. Truy cập <b>lịch sử mua hàng</b> để kiểm tra khóa học ngay nhé.</p>";
 
-            public const string MyCourseDetailRouter = "/khoa-hoc-cua-toi/{{CourseId}}";
+            public const string MyCourseDetailRouter = "/my-course/{{CourseId}}";
             public const string CourseUnfinishedNotificationTitle = "Có khóa học chưa hoàn thành";
             public const string CourseUnfinishedNotificationMessageVNI =
                 "<p>{{AccountName}} ơi, bạn có khóa học  <b>{{CourseName}}</b> chưa được hoàn thành. Đi đến <b>Chi tiết khóa học</b> để học ngay hôm nay nhé.</p>";
-            public static class CourseScoringNotification
-            {
-                public const string StepName = "StepName";
-                public const string UnitName = "UnitName";
-                public const string UnitTestName = "UnitTestName";
-                public const string CourseTestName = "CourseTestName";
-                public const string CourseName = "CourseName";
-                public const string Tool3rd = "Tool3rd";
-                public const string KeyCode = "KeyCode";
-                public const string MissionName = "MissionName";
-                public const string LessonName = "LessonName";
-                public const string FinalTestName = "FinalTestName";
-                public const string ClassName = "ClassName";
-
-                public const string TrailMessage = " đã được chấm. Xem kết quả ngay.";
-                public const string TrailUpdateMessage = "mới được cập nhật. Xem kết quả ngay.";
-                public const string HeadPracticeMessage = "Bài tập ";
-                public const string HeadTestMessage = "Bài kiểm tra ";
-                public const string HeadMissionMessage = "Nhiệm vụ ";
-                public const string In = " trong ";
-                public const string Of = " của ";
-                public const string WithCode = " với mã code ";
-                public const string Code = " Mã code ";
-
-                public const string StepMessage = $"{HeadPracticeMessage}{StepName}{In}{UnitName}";
-                public const string UnitTestMessage = $"{HeadTestMessage}{UnitTestName}{In}{UnitName}";
-                public const string CourseTestMessage = $"{HeadTestMessage}{CourseTestName}{In}{CourseName}";
-                public const string MockTestMessage = $"{Tool3rd}{WithCode}{KeyCode}";
-                public const string MissionMessage = $"{HeadMissionMessage}{MissionName}{In}{LessonName}";
-                public const string FinalTestMessage = $"{HeadTestMessage}{FinalTestName}{Of}{ClassName}";
-
-                public const string ApproveTittle = "Bài tập của bạn đã được chấm";
-                public const string ReApproveTitle = "Cập nhật kết quả chấm";
-                public const string ViewResultPracticeRoute = "khoa-tu-hoc/study-course/CourseId?{0}";
-
-
-                public const string CourseTestId = nameof(CourseTestId);
-                public const string ViewResultCourseTestRoute = $"course-test/exam/{CourseTestId}/result";
-
-                public const string CourseId = nameof(CourseId);
-                public const string StepId = nameof(StepId);
-                public const string UnitId = nameof(UnitId);
-                public const string LessonId = nameof(LessonId);
-                public const string QuestionnaireId = nameof(QuestionnaireId);
-                public const string notiType = nameof(notiType);
-                public const string ViewResultStepTestRoute = "course/CourseId/step/StepId/result";
-
-                public const string UnitTestId = nameof(UnitTestId);
-                //public const string ViewResultUnitTestRoute = "course/CourseId/unit-test/UnitTestId/result";
-                public const string ViewResultUnitTestRoute = "khoa-tu-hoc/study-course/CourseId?UnitTestId";
-
-                public const string MissionId = nameof(MissionId);
-                public const string ViewResultLiveClassRoute = "live-class-mission/MissionId/result";
-
-                //DetailTestId == final test
-                public const string LiveClassDetailTestId = nameof(LiveClassDetailTestId);
-                public const string FinalTestViewResultLink = "live-class-test/exam/LiveClassDetailTestId/view-result";
-
-                public const string ViewResultMocktestRoute = "thi-thu-online/exam/KeyCode/result";
-                public const string courseId = nameof(courseId);
-                
-            }
         }
 
         public static class LiveLessonDetailMessage
@@ -586,31 +595,6 @@ namespace IIG.Core.Common.ConfigureModels
             public const int PassingScore = 50;
         }
 
-        public static class LiveClassTypeName
-        {
-            public const string PreMission = "Nhiệm vụ trước buổi học";
-            public const string AfterMission = "Nhiệm vụ sau buổi học";
-
-        }
-
-        public static class Permissions
-        {
-            public static class Scoring
-            {
-                public const string CourseScoring = ":CourseScoring"; // Chấm điểm lớp tự học
-                public const string CourseScoringAssign = ":CourseScoring:Assign"; // Được giao việc
-                public const string CourseScoringEvaluate = ":CourseScoring:Evaluate"; // Chấm điểm
-                public const string CourseScoringRead = ":CourseScoring:Read"; // Xem
-                public const string CourseScoringUpdate = ":CourseScoring:Update"; // Sửa
-
-                public const string LiveScoring = "::LiveScoring"; // Chấm điểm lớp tự học
-                public const string LiveScoringScoringAssign = ":LiveScoring:Assign"; // Được giao việc
-                public const string LiveScoringScoringEvaluate = ":LiveScoring:Evaluate"; // Chấm điểm
-                public const string LiveScoringScoringRead = ":LiveScoring:Read"; // Xem
-                public const string LiveScoringScoringUpdate = ":LiveScoring:Update"; // Sửa
-            }
-        }
-
         public static class MongoCollectionName
         {
             public const string Questionnaires = "questionnaires";
@@ -625,13 +609,12 @@ namespace IIG.Core.Common.ConfigureModels
             public const string ScoringAI = "scoringByAI";
         }
 
-        public static class LastUpdatedType
+        public static class OtpBodyTemplate
         {
-            public const string Student = "Học viên";
-            public const string System =  "Hệ Thống";
 
+            public const string EmailSubject = "Register verification email";
+            public const string EmailBody = "Enter the verification code on IIG website to complete register: {0}";
         }
 
-        
     }
 }
