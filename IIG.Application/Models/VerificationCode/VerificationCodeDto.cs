@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.VerificationCode
+﻿namespace IIG.Application.Models
 {
     public class VerificationCodeDto
     {

@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Models.SpeakingAndWriting;
 
-namespace IIG.Web.Data.Models.LiveLessonMission;
+namespace IIG.Application.Models;
 public class WebUserLessonMissionChooseModel
 {
     public Guid QuestionId { get; set; }

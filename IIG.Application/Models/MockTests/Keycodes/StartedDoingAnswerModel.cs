@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.MockTests.Keycodes;
+﻿namespace IIG.Application.Models.Keycodes;
 public class StartedDoingAnswerModel
 {
     public string KeyCode { get; set; }

@@ -1,8 +1,8 @@
 ﻿using IIG.Core.Common.Enums;
 using IIG.Core.Common.Models.SpeakingAndWriting;
-using IIG.Web.Data.Models.ExamTools.KeyCodes;
+using IIG.Application.Models.KeyCodes;
 
-namespace IIG.Web.Data.Models.LiveClassTest;
+namespace IIG.Application.Models;
 public class LiveClassTestViewResultDto
     : IWatchCount
 {

@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Practices.WebUserChoose;
+﻿namespace IIG.Application.Models.WebUserChoose;
 
 public class WebUserChooseInsert
 {

@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.ShoppingCart.OrderDetails;
+﻿namespace IIG.Application.Models.OrderDetails;
 
 public class OrderDetailInsertModel : OrderDetailModel
 {

@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.ExamTools.ExamTool.ThirdParty;
+﻿namespace IIG.Application.Models.ExamTool.ThirdParty;
 
 public class ExamToolThirdPartyMoreInfoDto
 {

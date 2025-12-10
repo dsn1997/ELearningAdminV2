@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Practices.WebUserUnitTestResult;
+﻿namespace IIG.Application.Models.WebUserUnitTestResult;
 public class WebUserUnitTestResultDelete
 {
     public Guid WebUserId { get; set; }

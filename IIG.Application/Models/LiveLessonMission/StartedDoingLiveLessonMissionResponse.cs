@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.LiveLessonMission;
+﻿namespace IIG.Application.Models;
 public class StartedDoingLiveLessonMissionResponse
 {
     public string LiveClassDetailName { get; set; }

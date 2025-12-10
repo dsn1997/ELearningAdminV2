@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Practices.WebUserUnitTestResult;
+﻿namespace IIG.Application.Models.WebUserUnitTestResult;
 public class SubmittedUnitTestDetailModel
 {
     public string UnitTestTitle { get; set; }

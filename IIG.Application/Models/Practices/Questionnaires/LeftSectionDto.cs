@@ -1,7 +1,7 @@
 ﻿using IIG.Core.Common.Models.Files;
 using IIG.Core.Common.Models.SpeakingAndWriting;
 
-namespace IIG.Web.Data.Models.Practices.Questionnaires
+namespace IIG.Application.Models.Questionnaires
 {
     public class LeftSectionDto
         : ISpeakingWritingProperty, ISampleProperty

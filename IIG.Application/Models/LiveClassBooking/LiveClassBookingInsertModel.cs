@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.LiveClassBooking;
+﻿namespace IIG.Application.Models;
 public class LiveClassBookingInsertModel
 {
     public Guid Id { get; set; }

@@ -1,11 +1,11 @@
-﻿using IIG.Web.Data.Models.MockTests.MockTest;
+﻿using IIG.Application.Models.MockTest;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IIG.Web.Data.Models.SeftStudyProgram
+namespace IIG.Application.Models
 {
     public class Menu_SeftStudyProgram_ExamToolDto
     {

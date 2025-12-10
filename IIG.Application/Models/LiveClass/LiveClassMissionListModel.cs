@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Models.SpeakingAndWriting;
 
-namespace IIG.Web.Data.Models.LiveClass
+namespace IIG.Application.Models
 {
     public class LiveClassMissionListModel
         : IWatchCount

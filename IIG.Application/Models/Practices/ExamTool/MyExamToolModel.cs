@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Practices.ExamTool;
+﻿namespace IIG.Application.Models.ExamTool;
 public class MyExamToolListModel
 {
     public Guid CourseId { get; set; }

@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.LiveClass
+﻿namespace IIG.Application.Models
 {
     // this use for live class test + lesson + mission
     public enum ELessonStatusDisplay

@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Courses;
+﻿namespace IIG.Application.Models;
 
 public class CourseBasicDto
 {

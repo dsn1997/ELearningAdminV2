@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.MockTests.MockTestType;
+﻿namespace IIG.Application.Models.MockTestType;
 
 public class MockTestTypeDto
 {

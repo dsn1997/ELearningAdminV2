@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Enums;
 
-namespace IIG.Web.Data.Models.ShoppingCart.Orders;
+namespace IIG.Application.Models.Orders;
 public class TransactionPaymentInfoModel
 {
     public Guid Id { get; set; }

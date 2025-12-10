@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.ShoppingCart.PaymentTransaction;
+﻿namespace IIG.Application.Models.PaymentTransaction;
 public class PaymentTransactionInsertOrUpdateModel
 {
     public Guid Id { get; set; }

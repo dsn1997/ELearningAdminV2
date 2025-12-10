@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Models.Paging;
 
-namespace IIG.Web.Data.Models.Practices.Dictionary;
+namespace IIG.Application.Models.Dictionary;
 public class MyDictionaryRequest : BasePaginationRequest
 {
     // used

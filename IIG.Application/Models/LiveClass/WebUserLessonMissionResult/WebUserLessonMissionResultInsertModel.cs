@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.LiveClass.WebUserLessonMissionResult;
+﻿namespace IIG.Application.Models.WebUserLessonMissionResult;
 public class WebUserLessonMissionResultInsertModel
 {
     public Guid WebUserId { get; set; }

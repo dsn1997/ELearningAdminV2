@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Enums;
 
-namespace IIG.Web.Data.Models.LiveLessonMission;
+namespace IIG.Application.Models;
 public class LiveLessonMissionQuestionnaireModel
 {
     public Guid LiveLessonMissionId { get; set; }

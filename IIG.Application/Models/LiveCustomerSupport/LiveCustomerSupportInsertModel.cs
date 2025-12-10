@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.LiveCustomerSupport;
+﻿namespace IIG.Application.Models;
 
 public class LiveCustomerSupportInsertModel
 {

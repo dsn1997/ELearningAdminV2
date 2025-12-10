@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.News;
+﻿namespace IIG.Application.Models;
 
 public class NewsInfoDto
 {

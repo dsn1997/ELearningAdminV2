@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.MockTests.MockTest;
+﻿namespace IIG.Application.Models.MockTest;
 
 public class MockTestTranslationDto : BaseConcreteTranslation
 {

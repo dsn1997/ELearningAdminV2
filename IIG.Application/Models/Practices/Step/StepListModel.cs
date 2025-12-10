@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Models.MockTests;
 
-namespace IIG.Web.Data.Models.Practices.Step;
+namespace IIG.Application.Models.Step;
 
 public class StepListModel
     : IRedoSettingProperty

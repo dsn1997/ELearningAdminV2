@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.ExamTools.KeyCodes;
+﻿namespace IIG.Application.Models.KeyCodes;
 
 public class KeyCodeResultModel
 {

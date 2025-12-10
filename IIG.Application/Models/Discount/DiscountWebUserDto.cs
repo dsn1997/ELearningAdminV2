@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Discount;
+﻿namespace IIG.Application.Models;
 
 public class DiscountWebUserDto
 {

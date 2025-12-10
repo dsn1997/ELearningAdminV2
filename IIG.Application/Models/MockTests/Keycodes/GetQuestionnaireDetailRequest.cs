@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.MongoDataModels.Keycodes;
 
-namespace IIG.Web.Data.Models.MockTests.Keycodes;
+namespace IIG.Application.Models.Keycodes;
 public class GetQuestionnaireDetailRequest : MockTestKeyCodeBaseRequest
 {
     public Guid QuestionnaireId { get; set; }

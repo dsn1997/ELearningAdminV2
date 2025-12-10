@@ -1,6 +1,6 @@
-﻿using IIG.Web.Data.Models.Practices.Step;
+﻿using IIG.Application.Models.Step;
 
-namespace IIG.Web.Data.Models.Practices.Lesson;
+namespace IIG.Application.Models.Lesson;
 
 public class LessonListModel
 {

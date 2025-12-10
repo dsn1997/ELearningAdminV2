@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.MongoDataModels;
 
-namespace IIG.Web.Data.Models.Practices.Assessment;
+namespace IIG.Application.Models.Assessment;
 
 public class AssessmentSeeAnswerResponse
 {

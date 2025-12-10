@@ -1,8 +1,8 @@
 ﻿using IIG.Core.Common.Enums;
-using IIG.Web.Data.Models.CoursePrice;
-using IIG.Web.Data.Models.MockTests.MockTest;
+using IIG.Application.Models;
+using IIG.Application.Models.MockTest;
 
-namespace IIG.Web.Data.Models.SeftStudyProgram;
+namespace IIG.Application.Models;
 
 public class SeftStudyProgramDetailDto
 {

@@ -3,7 +3,7 @@
 using IIG.Core.Common.Enums;
 using System.Text.Json.Serialization;
 
-namespace IIG.Web.Data.Models.ExamTools.KeyCodes;
+namespace IIG.Application.Models.KeyCodes;
 
 public class MockTestSectionResultDto
 {

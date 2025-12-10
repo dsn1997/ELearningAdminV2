@@ -1,7 +1,7 @@
 ﻿using IIG.Core.Common.Enums;
-using IIG.Web.Data.Models.Practices.Versioning;
+using IIG.Application.Models.Versioning;
 
-namespace IIG.Web.Data.Models.LiveLessonMission;
+namespace IIG.Application.Models;
 public class QuestionnaireAndAnswerVersionResponse
 {
     public QuestionnaireVersionInfo QuestionnaireInfo { get; set; }

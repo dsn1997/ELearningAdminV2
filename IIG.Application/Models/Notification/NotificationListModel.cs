@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Notification;
+﻿namespace IIG.Application.Models;
 public class NotificationListModel
 {
     public Guid Id { get; set; }

@@ -1,7 +1,7 @@
 ﻿using IIG.Core.Common.Enums;
-using IIG.Web.Data.Models.Auth.Facebook;
+using IIG.Application.Models.Facebook;
 
-namespace IIG.Web.Data.Models.Auth.Social;
+namespace IIG.Application.Models.Social;
 
 public class SocialDto: TokenDto
 {

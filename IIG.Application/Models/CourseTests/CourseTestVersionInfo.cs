@@ -1,7 +1,7 @@
-﻿using IIG.Web.Data.Models.Practices.Versioning;
-using IIG.Web.Data.Models.Practices.WebUserUnitTestChoose;
+﻿using IIG.Application.Models.Versioning;
+using IIG.Application.Models.WebUserUnitTestChoose;
 
-namespace IIG.Web.Data.Models.CourseTests;
+namespace IIG.Application.Models;
 
 public class CourseTestVersionInfo
 {

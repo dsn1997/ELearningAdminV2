@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Enums;
 
-namespace IIG.Web.Data.Models.HomePage;
+namespace IIG.Application.Models;
 public class SearchingCourseHomePageResponse
 {
     public Guid Id { get; set; }

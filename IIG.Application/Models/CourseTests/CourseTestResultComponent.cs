@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.CourseTests;
+﻿namespace IIG.Application.Models;
 public class CourseTestResultComponent
 {
     public Guid SectionId { get; set; }

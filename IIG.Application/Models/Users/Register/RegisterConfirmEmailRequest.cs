@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Users.Register
+﻿namespace IIG.Application.Models.Register
 {
     public class RegisterConfirmEmailRequest
     {

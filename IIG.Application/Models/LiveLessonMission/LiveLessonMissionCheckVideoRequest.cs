@@ -1,6 +1,6 @@
-using IIG.Web.Data.Models.Practices.Assessment;
+using IIG.Application.Models.Assessment;
 
-namespace IIG.Web.Data.Models.LiveLessonMission;
+namespace IIG.Application.Models;
 
 public class LiveLessonMissionCheckVideoRequest
 {

@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.MongoDataModels.MockTests;
 
-namespace IIG.Web.Data.Models.MockTests.Keycodes;
+namespace IIG.Application.Models.Keycodes;
 public class StartedDoingAnswerResponse
 {
     public string MockTestName { get; set; }

@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Enums;
 
-namespace IIG.Web.Data.Models.Discount;
+namespace IIG.Application.Models;
 
 public class DiscountDto
 {

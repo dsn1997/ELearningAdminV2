@@ -1,7 +1,7 @@
-﻿using IIG.Web.Data.Models.LiveClassType;
+﻿using IIG.Application.Models;
 using System.Text.Json.Serialization;
 
-namespace IIG.Web.Data.Models.CoursePrice;
+namespace IIG.Application.Models;
 
 public class CoursePriceDto
 {

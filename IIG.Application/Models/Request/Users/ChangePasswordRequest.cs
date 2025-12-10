@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Request.Users;
+﻿namespace IIG.Application.Models.Users;
 public class ChangePasswordRequest
 {
     public string CurrentPassword { get; set; }

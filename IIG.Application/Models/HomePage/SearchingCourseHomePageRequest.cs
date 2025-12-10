@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Models.Paging;
 
-namespace IIG.Web.Data.Models.HomePage;
+namespace IIG.Application.Models;
 public class SearchingCourseHomePageRequest : BasePaginationRequest
 {
     // used

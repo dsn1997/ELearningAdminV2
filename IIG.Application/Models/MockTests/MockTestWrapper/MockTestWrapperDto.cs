@@ -1,5 +1,5 @@
-﻿using IIG.Web.Data.Models.MockTests;
-using IIG.Web.Data.Models.MockTests.MockTest;
+﻿using IIG.Application.Models;
+using IIG.Application.Models.MockTest;
 using System.ComponentModel.DataAnnotations;
 
 namespace IIG.Web.Data.Models;

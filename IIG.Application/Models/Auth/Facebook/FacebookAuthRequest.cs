@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Auth.Facebook;
+﻿namespace IIG.Application.Models.Facebook;
 
 public class FacebookAuthRequest
 {

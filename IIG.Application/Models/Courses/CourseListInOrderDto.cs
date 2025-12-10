@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Courses;
+﻿namespace IIG.Application.Models;
 public class CourseListInOrderDto
 {
     public Guid OrderId { get; set; }

@@ -1,7 +1,7 @@
 ﻿using IIG.Core.Common.MongoDataModels.MockTests;
-using IIG.Web.Data.Models.ExamTools.KeyCodes;
+using IIG.Application.Models.KeyCodes;
 
-namespace IIG.Web.Data.Models.CourseTests;
+namespace IIG.Application.Models;
 
 public class WebUserCourseTestResultModel
 {

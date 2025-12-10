@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Practices.StepQuestionnaires
+﻿namespace IIG.Application.Models.StepQuestionnaires
 {
     public class StepQuestionnaireDto
     {

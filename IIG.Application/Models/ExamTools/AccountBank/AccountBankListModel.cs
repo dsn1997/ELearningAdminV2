@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Enums;
 
-namespace IIG.Web.Data.Models.ExamTools.AccountBank;
+namespace IIG.Application.Models.AccountBank;
 
 public class AccountBankListModel
 {

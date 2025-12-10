@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Enums;
 
-namespace IIG.Web.Data.Models.Practices.Dictionary;
+namespace IIG.Application.Models.Dictionary;
 public class MyDictionaryInsertModel
 {
     public Guid StepId { get; set; }

@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Reviews;
+﻿namespace IIG.Application.Models;
 
 public class CourseReviewDto
 {

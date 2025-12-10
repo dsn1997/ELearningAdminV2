@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace IIG.Web.Data.Models.CoursePrice;
+namespace IIG.Application.Models;
 
 public class CoursePriceBasicDto
 {

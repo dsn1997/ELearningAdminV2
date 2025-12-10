@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.ToeflChallenge
+﻿namespace IIG.Application.Models
 {
     public class ToeflChallengeUserInfoDto
     {

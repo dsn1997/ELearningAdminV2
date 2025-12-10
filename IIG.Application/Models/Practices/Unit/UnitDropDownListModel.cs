@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace IIG.Web.Data.Models.Practices.Unit;
+namespace IIG.Application.Models.Unit;
 public class UnitDropDownListModel
 {
     public Guid Id { get; set; }

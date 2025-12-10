@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Enums;
 
-namespace IIG.Web.Data.Models.MockTests.Keycodes;
+namespace IIG.Application.Models.Keycodes;
 public class AnswerResponse
 {
     public Guid AnswerId { get; set; }

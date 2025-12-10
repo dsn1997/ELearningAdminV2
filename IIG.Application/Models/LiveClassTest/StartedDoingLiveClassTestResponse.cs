@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.MongoDataModels.MockTests;
 
-namespace IIG.Web.Data.Models.LiveClassTest;
+namespace IIG.Application.Models;
 public class StartedDoingLiveClassTestResponse
 {
     public Guid LiveClassId { get; set; }

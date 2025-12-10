@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.LiveLessonMission;
+﻿namespace IIG.Application.Models;
 public class LiveLessonMissionModel
 {
     public Guid Id { get; set; }

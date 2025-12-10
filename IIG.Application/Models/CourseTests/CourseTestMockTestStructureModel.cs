@@ -1,7 +1,7 @@
 ﻿using IIG.Core.Common.Models.MockTests;
-using IIG.Web.Data.Models.MockTests;
+using IIG.Application.Models;
 
-namespace IIG.Web.Data.Models.CourseTests;
+namespace IIG.Application.Models;
 
 public class CourseTestMockTestStructureModel : MockTestStructureModel, IRedoSettingProperty
 {

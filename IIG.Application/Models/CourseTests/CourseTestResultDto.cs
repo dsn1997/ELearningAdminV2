@@ -2,7 +2,7 @@
 using IIG.Core.Common.Models.SpeakingAndWriting;
 using Newtonsoft.Json;
 
-namespace IIG.Web.Data.Models.CourseTests;
+namespace IIG.Application.Models;
 
 public class CourseTestResultDto
     : IWatchCount

@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Enums;
 
-namespace IIG.Web.Data.Models.LiveClassTest;
+namespace IIG.Application.Models;
 public class MockTestLiveClassTestBasicDto
 {
     public Guid LiveClasTestId { get; set; }

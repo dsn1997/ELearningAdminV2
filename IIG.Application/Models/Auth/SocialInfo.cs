@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Auth;
+﻿namespace IIG.Application.Models;
 
 public class SocialInfo
 {

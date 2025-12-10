@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using EntityFrameWorkCore;
 using IIG.Core.Interface;
+using IIG.Core.Repository;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace IIG.Core.Base
@@ -10,6 +12,8 @@ namespace IIG.Core.Base
         IAppSession AppSession { get; }
         IUnitOfWorkManager UnitOfWorkManager { get; }
         IMapper Mapper { get; }
+        IRepository<TEntity> Repository<TEntity>() where TEntity : class;
+
     }
 
     public class AppFactory : IAppFactory
@@ -17,12 +21,23 @@ namespace IIG.Core.Base
         #region LazyGetRequiredService
         protected IServiceProvider ServiceProvider { get; set; }
         protected readonly object ServiceProviderLock = new object();
-        private readonly IServiceScopeFactory _scopeFactory;
+        private readonly IServiceScope _scopeIfCreated;
 
-        public AppFactory(IServiceProvider serviceProvider, IServiceScopeFactory scopeFactory)
+        public AppFactory(IServiceProvider serviceProvider, IHttpContextAccessor httpContextAccessor)
         {
             ServiceProvider = serviceProvider;
-            _scopeFactory = scopeFactory;
+            var requestProvider = httpContextAccessor?.HttpContext?.RequestServices;
+
+            if (requestProvider != null)
+            {
+                ServiceProvider = requestProvider;
+            }
+            else
+            {
+                // 🔴 Không có HTTP scope → tạo scope mới
+                _scopeIfCreated = serviceProvider.CreateScope();
+                ServiceProvider = _scopeIfCreated.ServiceProvider;
+            }
         }
 
         protected TService LazyGetRequiredService<TService>(ref TService reference)
@@ -41,6 +56,25 @@ namespace IIG.Core.Base
         }
         #endregion
 
+        #region Repository
+
+        private Dictionary<Type, object> _repositories;
+        public IRepository<TEntity> Repository<TEntity>() where TEntity : class
+        {
+            _repositories ??= new Dictionary<Type, object>();
+
+            var type = typeof(TEntity);
+            lock (ServiceProviderLock)
+            {
+                if (!_repositories.ContainsKey(type))
+                {
+                    _repositories[type] = ServiceProvider.GetRequiredService<IRepository<TEntity>>();
+                }
+            }
+
+            return (IRepository<TEntity>)_repositories[type];
+        }
+        #endregion
         private IAppSession _appSession;
         public IAppSession AppSession { get => LazyGetRequiredService(ref _appSession); }
 
@@ -52,5 +86,6 @@ namespace IIG.Core.Base
 
         private IMapper _mapper;
         public IMapper Mapper { get => LazyGetRequiredService(ref _mapper); }
+
     }
 }

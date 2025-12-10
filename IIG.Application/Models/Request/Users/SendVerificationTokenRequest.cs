@@ -1,6 +1,6 @@
-﻿using IIG.Web.Data.Models.VerificationCode;
+﻿using IIG.Application.Models;
 
-namespace IIG.Web.Data.Models.Request.Users;
+namespace IIG.Application.Models.Users;
 public class SendVerificationTokenRequest
 {
     public string Email { get; set; }

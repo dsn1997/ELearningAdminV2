@@ -14,4 +14,8 @@
     <ProjectReference Include="..\IIG.Core\IIG.Core.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\Net\" />
+  </ItemGroup>
+
 </Project>

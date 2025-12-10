@@ -1,6 +1,6 @@
-﻿using IIG.Web.Data.Models.Answers;
+﻿using IIG.Application.Models;
 
-namespace IIG.Web.Data.Models.LiveClass.WebUserLessonMissionChoose;
+namespace IIG.Application.Models.WebUserLessonMissionChoose;
 public class WebUserLessonMissionChooseInsetModel
 {
     public Guid WebUserId { get; set; }

@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Practices.MyMission;
+﻿namespace IIG.Application.Models.MyMission;
 public class MyMissionUnFinishedListModel
 {
     public Guid Id { get; set; }

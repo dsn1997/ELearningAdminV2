@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Models.Paging;
 
-namespace IIG.Web.Data.Models.News;
+namespace IIG.Application.Models;
 
 public class SearchingNewsByCategoryIdRequest : BasePaginationRequest
 {

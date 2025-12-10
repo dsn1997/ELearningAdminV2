@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace IIG.Web.Data.Models.Courses;
+namespace IIG.Application.Models;
 
 public class CourseTimeOnTaskModel
 {

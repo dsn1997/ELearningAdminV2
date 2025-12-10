@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Enums;
 
-namespace IIG.Web.Data.Models.MockTests.MockTestKeyCode;
+namespace IIG.Application.Models.MockTestKeyCode;
 
 public class MockTestKeyCodeDetailDto
 {

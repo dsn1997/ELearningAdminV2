@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Setting;
+﻿namespace IIG.Application.Models;
 public class AddressListModel
 {
     public Guid Id { get; set; }

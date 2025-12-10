@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Practices.Lesson;
+﻿namespace IIG.Application.Models.Lesson;
 
 public class LessonDto
 {

@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Models.MockTests;
 
-namespace IIG.Web.Data.Models.Practices.UnitTest;
+namespace IIG.Application.Models.UnitTest;
 public class StartDoingUnitTestResponse
     : IRedoSettingProperty
 {

@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Models.MockTests;
 
-namespace IIG.Web.Data.Models.CourseTests;
+namespace IIG.Application.Models;
 
 public class CourseTestDetailDto
     : IRedoSettingProperty 

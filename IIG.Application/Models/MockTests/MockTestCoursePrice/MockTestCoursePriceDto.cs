@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.MockTests.MockTestCoursePrice;
+﻿namespace IIG.Application.Models.MockTestCoursePrice;
 
 public class MockTestCoursePriceDto
 {

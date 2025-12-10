@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IIG.Web.Data.Models.MockTests
+namespace IIG.Application.Models
 {
     public class VerifyKeyCodeRequest
     {

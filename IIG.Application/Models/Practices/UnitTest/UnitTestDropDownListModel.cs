@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Practices.UnitTest;
+﻿namespace IIG.Application.Models.UnitTest;
 public class UnitTestDropDownListModel
 {
     public Guid Id { get; set; }

@@ -1,7 +1,7 @@
 ﻿using IIG.Core.Common.Enums.OrderBy;
 using IIG.Core.Common.Models.Paging;
 
-namespace IIG.Web.Data.Models.ToeflChallenge
+namespace IIG.Application.Models
 {
     public class SearchingToeflChallengeContestMocktestRequest: BasePaginationRequest<EToeflChallengeContestMocktestOrderBy>
     {

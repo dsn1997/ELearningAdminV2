@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Practices.Unit;
+﻿namespace IIG.Application.Models.Unit;
 public class UnitStateModel
 {
     public Guid? CurrentUnitId { get; set; }

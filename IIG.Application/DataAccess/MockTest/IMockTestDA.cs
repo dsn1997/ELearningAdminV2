@@ -1,8 +1,8 @@
-﻿using IIG.Web.Data.Models.MockTests;
-using IIG.Web.Data.Models.MockTests.Keycodes;
-using IIG.Web.Data.Models.MockTests.MockTest;
+﻿using IIG.Application.Models;
+using IIG.Application.Models.Keycodes;
+using IIG.Application.Models.MockTest;
 
-namespace IIG.Web.Data.Services.Interfaces.MockTests;
+namespace IIG.Application.Data;
 
 public interface IMockTestDA 
 {

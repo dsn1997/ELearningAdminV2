@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace IIG.Web.Data.Models.VerificationCode
+namespace IIG.Application.Models
 {
     public enum EVerificationCodeType
     {

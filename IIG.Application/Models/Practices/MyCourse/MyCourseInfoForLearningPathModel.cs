@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Enums;
 
-namespace IIG.Web.Data.Models.Practices.MyCourse;
+namespace IIG.Application.Models.MyCourse;
 public class MyCourseInfoForLearningPathModel
 {
     public Guid CourseId { get; set; }

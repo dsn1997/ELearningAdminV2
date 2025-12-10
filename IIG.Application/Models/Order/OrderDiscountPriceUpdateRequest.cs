@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Order;
+﻿namespace IIG.Application.Models;
 
 public class OrderDiscountPriceUpdateRequest
 {

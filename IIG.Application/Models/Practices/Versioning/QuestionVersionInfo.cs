@@ -2,10 +2,10 @@
 using IIG.Core.Common.Models.Files;
 using IIG.Core.Common.Models.SpeakingAndWriting;
 using IIG.Core.Helpers;
-using IIG.Web.Data.Models.Practices.Questionnaires;
+using IIG.Application.Models.Questionnaires;
 using Newtonsoft.Json;
 
-namespace IIG.Web.Data.Models.Practices.Versioning;
+namespace IIG.Application.Models.Versioning;
 public class QuestionVersionInfo
 {
     public Guid QuestionId { get; set; }

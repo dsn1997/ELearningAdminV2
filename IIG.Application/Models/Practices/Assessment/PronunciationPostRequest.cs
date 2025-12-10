@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 
-namespace IIG.Web.Data.Models.Practices.Assessment;
+namespace IIG.Application.Models.Assessment;
 public class PronunciationPostRequest
 {
     public Guid StepId { get; set; }

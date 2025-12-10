@@ -1,6 +1,6 @@
-﻿using IIG.Web.Data.Models.CourseStatistic;
+﻿using IIG.Application.Models;
 
-namespace IIG.Web.Data.Models.Practices.Unit;
+namespace IIG.Application.Models.Unit;
 
 public class UnitDto
 {

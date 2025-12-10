@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Auth.Social;
+﻿namespace IIG.Application.Models.Social;
 
 public class UserBySocialIdDto
 {

@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.ShoppingCart.Orders;
+﻿namespace IIG.Application.Models.Orders;
 
 public class CartInsertRequest
 {

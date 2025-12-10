@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Models.MockTests;
 
-namespace IIG.Web.Data.Models.MockTests.PolicyMockTestSetting;
+namespace IIG.Application.Models.PolicyMockTestSetting;
 public class PolicyMockTestSettingDetailModel
     : IMocktestSettingRecordingTestDto
 {

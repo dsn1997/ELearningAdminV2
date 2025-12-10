@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace IIG.Web.Data.Models.Answers;
+namespace IIG.Application.Models;
 
 public  class ChooseBaseModelResponse
 {

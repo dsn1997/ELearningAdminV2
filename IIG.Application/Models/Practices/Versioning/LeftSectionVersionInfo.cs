@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Models.Files;
 
-namespace IIG.Web.Data.Models.Practices.Versioning;
+namespace IIG.Application.Models.Versioning;
 
 public class LeftSectionVersionInfo
 {

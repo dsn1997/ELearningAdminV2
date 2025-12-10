@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Practices.UnitTest;
+﻿namespace IIG.Application.Models.UnitTest;
 public class UnitTestListModel
 {
     public Guid Id { get; set; }

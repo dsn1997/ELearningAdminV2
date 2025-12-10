@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.MockTests.MockTestPartQuestionnaire;
+﻿namespace IIG.Application.Models.MockTestPartQuestionnaire;
 
 public class MockTestQuestionAnswerIdModel
 {

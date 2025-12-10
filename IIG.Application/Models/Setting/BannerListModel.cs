@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Enums;
 
-namespace IIG.Web.Data.Models.Setting;
+namespace IIG.Application.Models;
 public class BannerListModel
 {
     public Guid Id { get; set; }

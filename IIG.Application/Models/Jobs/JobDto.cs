@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Jobs;
+﻿namespace IIG.Application.Models;
 
 public class JobDto
 {

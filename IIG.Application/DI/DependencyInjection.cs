@@ -1,4 +1,5 @@
 ﻿using IIG.Application.Services;
+using IIG.Core.Base;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -13,6 +14,7 @@ namespace IIG.Application.DI
     {
         public static IServiceCollection AddServiceApplicationConfig(this IServiceCollection services, IConfiguration configuration)
         {
+            services.AddScoped<IAppFactory, AppFactory>();
             services.AddScoped<ICommonService, CommonService>();
             services.AddScoped<ITagService, TagService>();
 

@@ -3,7 +3,7 @@ using IIG.Core.Common.Models.Files;
 using IIG.Core.Common.Models.SpeakingAndWriting;
 using IIG.Core.Common.MongoDataModels.Keycodes;
 
-namespace IIG.Web.Data.Models.MockTests.Keycodes;
+namespace IIG.Application.Models.Keycodes;
 public class SaveAnswerRequest : MockTestKeyCodeBaseRequest
 {
     public Guid MockTestSectionId { get; set; }

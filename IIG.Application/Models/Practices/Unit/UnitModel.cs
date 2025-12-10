@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Models.Files;
 
-namespace IIG.Web.Data.Models.Practices.Unit;
+namespace IIG.Application.Models.Unit;
 
 public class UnitModel
 {

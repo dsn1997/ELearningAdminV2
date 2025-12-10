@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Enums;
 
-namespace IIG.Web.Data.Models.Practices.Questionnaires;
+namespace IIG.Application.Models.Questionnaires;
 public class FlashCardQuestionModel
 {
     public Guid Id { get; set; }

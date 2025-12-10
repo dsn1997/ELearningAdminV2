@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Practices.WebUserPracticeHistory;
+﻿namespace IIG.Application.Models.WebUserPracticeHistory;
 
 public class WebUserPracticeHistoryRequest
 {

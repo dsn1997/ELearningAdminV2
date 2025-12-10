@@ -1,6 +1,6 @@
-﻿using IIG.Web.Data.Models.Answers;
+﻿using IIG.Application.Models;
 
-namespace IIG.Web.Data.Models.MockTests.KeycodeChooses;
+namespace IIG.Application.Models.KeycodeChooses;
 
 public class KeyCodeChooseResponse : ChooseBaseModelResponse
 {

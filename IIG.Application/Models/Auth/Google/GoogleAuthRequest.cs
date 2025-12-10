@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Auth.Google;
+﻿namespace IIG.Application.Models.Google;
 
 public class GoogleAuthRequest
 {

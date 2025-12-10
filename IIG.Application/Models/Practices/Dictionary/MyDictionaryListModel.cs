@@ -1,7 +1,7 @@
 ﻿using IIG.Core.Common.Enums;
 using Newtonsoft.Json;
 
-namespace IIG.Web.Data.Models.Practices.Dictionary;
+namespace IIG.Application.Models.Dictionary;
 public class MyDictionaryListModel
 {
     public Guid Id { get; set; }

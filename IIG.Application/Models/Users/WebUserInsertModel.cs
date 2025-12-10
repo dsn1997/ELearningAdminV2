@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Enums;
 
-namespace IIG.Web.Data.Models.Users;
+namespace IIG.Application.Models;
 
 public class WebUserInsertModel
 {

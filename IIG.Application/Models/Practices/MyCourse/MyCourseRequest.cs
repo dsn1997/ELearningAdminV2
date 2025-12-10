@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Models.Paging;
 
-namespace IIG.Web.Data.Models.Practices.MyCourse;
+namespace IIG.Application.Models.MyCourse;
 
 public class MyCourseRequest : BasePaginationRequest
 {

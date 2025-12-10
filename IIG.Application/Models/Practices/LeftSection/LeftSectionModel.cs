@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Practices.LeftSection;
+﻿namespace IIG.Application.Models.LeftSection;
 public class LeftSectionModel
 {
     public Guid Id { get; set; }

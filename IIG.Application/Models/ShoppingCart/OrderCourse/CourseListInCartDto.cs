@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.ShoppingCart.OrderCourse;
+﻿namespace IIG.Application.Models.OrderCourse;
 public class CourseListInCartDto
 {
     public Guid OrderId { get; set; }

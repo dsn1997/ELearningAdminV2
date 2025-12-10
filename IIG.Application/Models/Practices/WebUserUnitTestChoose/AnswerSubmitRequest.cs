@@ -1,6 +1,6 @@
-﻿using IIG.Web.Data.Models.Answers;
+﻿using IIG.Application.Models;
 
-namespace IIG.Web.Data.Models.Practices.WebUserUnitTestChoose;
+namespace IIG.Application.Models.WebUserUnitTestChoose;
 public class AnswerSubmitRequest : ChooseBaseModelRequest
 {
     public Guid QuestionnaireId { get; set; }

@@ -1,7 +1,7 @@
 ﻿using IIG.Core.Common.Enums;
 using IIG.Core.Common.Models.SpeakingAndWriting;
 
-namespace IIG.Web.Data.Models.Practices.MyMission;
+namespace IIG.Application.Models.MyMission;
 public class MyMissionFinishedListModel
     : IWatchCount
 {

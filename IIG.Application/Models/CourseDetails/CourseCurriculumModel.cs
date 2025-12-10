@@ -1,7 +1,7 @@
-﻿using IIG.Web.Data.Models.Practices.Lesson;
-using IIG.Web.Data.Models.Practices.UnitTest;
+﻿using IIG.Application.Models.Lesson;
+using IIG.Application.Models.UnitTest;
 
-namespace IIG.Web.Data.Models.CourseDetails;
+namespace IIG.Application.Models;
 
 public class CourseCurriculumModel
 {

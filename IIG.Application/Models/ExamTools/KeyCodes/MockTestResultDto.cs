@@ -1,7 +1,7 @@
 ﻿using IIG.Core.Common.Enums;
 using IIG.Core.Common.Models.SpeakingAndWriting;
 
-namespace IIG.Web.Data.Models.ExamTools.KeyCodes;
+namespace IIG.Application.Models.KeyCodes;
 
 public class MockTestResultDto
     : IWatchCount

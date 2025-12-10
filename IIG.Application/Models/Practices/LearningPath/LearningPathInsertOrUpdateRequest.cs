@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Enums;
 
-namespace IIG.Web.Data.Models.Practices.LearningPath;
+namespace IIG.Application.Models.LearningPath;
 public class LearningPathInsertOrUpdateRequest
 {
     public Guid CourseId { get; set; }

@@ -1,7 +1,7 @@
 ﻿using IIG.Core.Common.Enums;
-using IIG.Web.Data.Models.Courses;
+using IIG.Application.Models;
 
-namespace IIG.Web.Data.Models.Order;
+namespace IIG.Application.Models;
 
 public class OrderListByUserModel
 {

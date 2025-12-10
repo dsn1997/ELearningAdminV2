@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.MockTests.GuidingMockTest;
+﻿namespace IIG.Application.Models.GuidingMockTest;
 
 public class GuidingToeflChallengeDetailModel
 {

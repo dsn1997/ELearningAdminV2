@@ -1,7 +1,7 @@
 ﻿using IIG.Core.Common.Enums;
 using IIG.Core.Common.Models.Paging;
 
-namespace IIG.Web.Data.Models.Courses;
+namespace IIG.Application.Models;
 
 public class SearchingCourseRequest : BasePaginationRequest
 {

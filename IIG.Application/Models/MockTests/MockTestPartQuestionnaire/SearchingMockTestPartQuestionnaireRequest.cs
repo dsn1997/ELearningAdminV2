@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Models.Paging;
 
-namespace IIG.Web.Data.Models.MockTests.MockTestPartQuestionnaire;
+namespace IIG.Application.Models.MockTestPartQuestionnaire;
 
 public class SearchingMockTestPartQuestionnaireRequest : BasePaginationRequest
 {

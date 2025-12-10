@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Models.Paging;
 
-namespace IIG.Web.Data.Models.Notification;
+namespace IIG.Application.Models;
 public class NotificationListModelRequest : BasePaginationRequest
 {
     public bool? IsRead { get; set; }

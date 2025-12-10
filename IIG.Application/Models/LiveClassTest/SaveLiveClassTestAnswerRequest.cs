@@ -2,7 +2,7 @@
 using IIG.Core.Common.Enums;
 using IIG.Core.Common.Models.Files;
 
-namespace IIG.Web.Data.Models.LiveClassTest;
+namespace IIG.Application.Models;
 public class SaveLiveClassTestAnswerRequest
 {
     [JsonIgnore]

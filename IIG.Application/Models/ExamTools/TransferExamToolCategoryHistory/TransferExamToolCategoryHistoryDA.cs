@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.ExamTools.TransferExamToolCategoryHistory;
+﻿namespace IIG.Application.Models.TransferExamToolCategoryHistory;
 
 public class TransferExamToolCategoryHistoryModel
 {

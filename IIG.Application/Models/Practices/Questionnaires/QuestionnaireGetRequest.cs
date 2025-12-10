@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Practices.Questionnaires
+﻿namespace IIG.Application.Models.Questionnaires
 {
     public class QuestionnaireGetRequest
     {

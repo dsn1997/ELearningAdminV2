@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.MockTests.MockTestPart;
+﻿namespace IIG.Application.Models.MockTestPart;
 public class MockTestPartDetailDto
 {
     public Guid Id { get; set; }

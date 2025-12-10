@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Enums;
 
-namespace IIG.Web.Data.Models.Practices.UnitTest;
+namespace IIG.Application.Models.UnitTest;
 public class UnitTestVersionMenuWithStatusListModel
 {
     public Guid Id { get; set; }

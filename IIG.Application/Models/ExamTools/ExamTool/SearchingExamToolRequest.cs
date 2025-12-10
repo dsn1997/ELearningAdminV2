@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Models.Paging;
 
-namespace IIG.Web.Data.Models.ExamTools.ExamTool;
+namespace IIG.Application.Models.ExamTool;
 public class SearchingExamToolRequest : BasePaginationRequest
 {
     public Guid? CategoryId { get; set; }

@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Payments
+﻿namespace IIG.Application.Models
 {
     public class ConfirmPaymentResponse
     {

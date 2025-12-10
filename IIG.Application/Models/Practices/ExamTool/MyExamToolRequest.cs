@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Models.Paging;
 
-namespace IIG.Web.Data.Models.Practices.ExamTool;
+namespace IIG.Application.Models.ExamTool;
 public class MyExamToolRequest : BasePaginationRequest
 {
 }

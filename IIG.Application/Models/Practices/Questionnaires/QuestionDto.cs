@@ -3,7 +3,7 @@ using IIG.Core.Common.Models.Files;
 using IIG.Core.Common.Models.SpeakingAndWriting;
 using System.Text.Json.Serialization;
 
-namespace IIG.Web.Data.Models.Practices.Questionnaires
+namespace IIG.Application.Models.Questionnaires
 {
     public class QuestionDto : 
         IAudioFileDuration, IAudioFileProperty,

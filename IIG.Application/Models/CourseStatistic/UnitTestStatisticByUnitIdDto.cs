@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Models.MockTests;
 
-namespace IIG.Web.Data.Models.CourseStatistic;
+namespace IIG.Application.Models;
 
 public class UnitTestStatisticByUnitIdDto
     : IRedoSettingProperty

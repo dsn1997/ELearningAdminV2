@@ -1,6 +1,6 @@
-﻿using IIG.Web.Data.Models.Practices.WebUserUnitTestChoose;
+﻿using IIG.Application.Models.WebUserUnitTestChoose;
 
-namespace IIG.Web.Data.Models.LiveLessonMission;
+namespace IIG.Application.Models;
 public class LiveLessonMissionSubmitRequest
 {
     public List<AnswerSubmitRequest> AnswerSubmitRequest { get; set; }

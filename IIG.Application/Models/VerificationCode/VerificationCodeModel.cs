@@ -1,7 +1,7 @@
 ﻿using IIG.Core.Common.Enums;
 using IIG.Core.Common.Models;
 
-namespace IIG.Web.Data.Models.VerificationCode;
+namespace IIG.Application.Models;
 public class VerificationCodeModel : BaseEntity
 {
     public Guid Id { get; set; }

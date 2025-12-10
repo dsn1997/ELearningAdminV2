@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.HomePage;
+﻿namespace IIG.Application.Models;
 public class LearnWithTeacherHomePageListModel
 {
     public Guid Id { get; set; }

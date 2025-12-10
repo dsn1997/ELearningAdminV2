@@ -1,7 +1,7 @@
 ﻿using IIG.Core.Common.Enums;
-using IIG.Web.Data.Models.SeftStudyProgram;
+using IIG.Application.Models;
 
-namespace IIG.Web.Data.Models.Category;
+namespace IIG.Application.Models;
 
 public class CategoryListModel
 {

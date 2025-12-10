@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Practices.Dictionary;
+﻿namespace IIG.Application.Models.Dictionary;
 public class MyDictionaryInsertRequest
 {
     public Guid StepId { get; set; }

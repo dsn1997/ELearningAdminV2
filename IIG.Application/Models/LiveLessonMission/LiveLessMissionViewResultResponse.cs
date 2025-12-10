@@ -1,7 +1,7 @@
 ﻿using IIG.Core.Common.Enums;
 using IIG.Core.Common.Models.SpeakingAndWriting;
 
-namespace IIG.Web.Data.Models.LiveLessonMission;
+namespace IIG.Application.Models;
 public class QuestionViewMission
 {
     public Guid Id { get; set; }

@@ -1,5 +1,5 @@
 ﻿using IIG.Core.Common.Models.Files;
-using IIG.Web.Data.Models.SeftStudyProgram;
+using IIG.Application.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace IIG.Web.Data.Models;

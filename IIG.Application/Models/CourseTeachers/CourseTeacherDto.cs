@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.CourseTeachers;
+﻿namespace IIG.Application.Models;
 
 public class CourseTeacherDto
 {

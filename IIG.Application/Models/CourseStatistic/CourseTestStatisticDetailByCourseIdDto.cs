@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Enums;
 
-namespace IIG.Web.Data.Models.CourseStatistic;
+namespace IIG.Application.Models;
 public class CourseTestStatisticDetailByCourseIdDto
 {
     public Guid Id { get; set; }

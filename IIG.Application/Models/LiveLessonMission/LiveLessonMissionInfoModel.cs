@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace IIG.Web.Data.Models.LiveLessonMission;
+namespace IIG.Application.Models;
 public class LiveLessonMissionInfoModel
 {
     public string Name { get; set; }

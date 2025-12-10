@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Models.Paging;
 
-namespace IIG.Web.Data.Models.Setting;
+namespace IIG.Application.Models;
 public class FeedbackListModelRequest : BasePaginationRequest
 {
     // used

@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Models.SpeakingAndWriting;
 
-namespace IIG.Web.Data.Models.MockTests.MockTestPart;
+namespace IIG.Application.Models.MockTestPart;
 public class MockTestPartInfoDto
     : IIsMarkByAIProperty, ITotalPartTimeProperty
 {

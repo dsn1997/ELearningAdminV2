@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Invoice;
+﻿namespace IIG.Application.Models;
 
 public class ReceiveInvoiceListModel
 {

@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Enums;
 
-namespace IIG.Web.Data.Models.Courses;
+namespace IIG.Application.Models;
 public class CourseSuggestionDto
 {
     public Guid Id { get; set; }

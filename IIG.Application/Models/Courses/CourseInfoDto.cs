@@ -1,8 +1,8 @@
 ﻿using IIG.Core.Common.Enums;
 using IIG.Core.Common.Models.MockTests;
-using IIG.Web.Data.Models.LiveClassType;
+using IIG.Application.Models;
 
-namespace IIG.Web.Data.Models.Courses;
+namespace IIG.Application.Models;
 
 public class CourseInfoDto
     : IRedoSettingProperty

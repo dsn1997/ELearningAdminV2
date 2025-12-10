@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Practices.WebUserUnitTestChoose;
+﻿namespace IIG.Application.Models.WebUserUnitTestChoose;
 public class WebUserUnitTestChooseModel
 {
     public Guid QuestionId { get; set; }

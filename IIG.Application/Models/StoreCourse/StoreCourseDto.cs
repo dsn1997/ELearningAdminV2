@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.StoreCourses;
+﻿namespace IIG.Application.Models;
 
 public class StoreCourseDto
 {

@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Enums;
 
-namespace IIG.Web.Data.Models.Reviews;
+namespace IIG.Application.Models;
 public class ReviewInsertModel
 {
     public Guid CourseId { get; set; }

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace IIG.Web.Data.Models.Auth.Google;
+namespace IIG.Application.Models.Google;
 
 public class GoogleAccessTokenDto
 {

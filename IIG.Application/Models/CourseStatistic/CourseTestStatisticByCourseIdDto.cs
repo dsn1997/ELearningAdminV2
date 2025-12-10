@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.CourseStatistic;
+﻿namespace IIG.Application.Models;
 public class CourseTestStatisticByCourseIdDto
 {
     public Guid CourseTestId { get; set; }

@@ -1,7 +1,7 @@
 ﻿using IIG.Core.Common.Models.Files;
 using System.Text.Json.Serialization;
 
-namespace IIG.Web.Data.Models.Notification;
+namespace IIG.Application.Models;
 public class NotificationInsertOrUpdateModel : BaseTranslation<NotificationTranslationDto>
 {
     public string Name { get; set; }

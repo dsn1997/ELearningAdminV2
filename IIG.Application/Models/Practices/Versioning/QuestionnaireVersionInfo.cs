@@ -1,8 +1,8 @@
 ﻿using IIG.Core.Common.Enums;
 using IIG.Core.Common.Models.Files;
-using IIG.Web.Data.Models.Practices.Questionnaires;
+using IIG.Application.Models.Questionnaires;
 
-namespace IIG.Web.Data.Models.Practices.Versioning;
+namespace IIG.Application.Models.Versioning;
 public class QuestionnaireVersionInfo
 {
     public Guid QuestionnaireId { get; set; }

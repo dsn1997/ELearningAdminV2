@@ -1,6 +1,6 @@
-﻿using IIG.Web.Data.Models.Answers;
+﻿using IIG.Application.Models;
 
-namespace IIG.Web.Data.Models.CourseTests;
+namespace IIG.Application.Models;
 
 public class CourseTestChooseResponse : ChooseBaseModelResponse
 {

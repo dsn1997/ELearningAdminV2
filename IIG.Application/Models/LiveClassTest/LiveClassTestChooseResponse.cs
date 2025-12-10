@@ -1,6 +1,6 @@
-﻿using IIG.Web.Data.Models.Answers;
+﻿using IIG.Application.Models;
 
-namespace IIG.Web.Data.Models.LiveClassTest;
+namespace IIG.Application.Models;
 public class LiveClassTestChooseResponse : ChooseBaseModelResponse
 {
     public Guid LiveClassTestId { get; set; }

@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.LiveClassTest;
+﻿namespace IIG.Application.Models;
 public class LiveClassTestModel
 {
     public Guid Id { get; set; }

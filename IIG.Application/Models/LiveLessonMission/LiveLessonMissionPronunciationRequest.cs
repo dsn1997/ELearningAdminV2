@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Http;
 
-namespace IIG.Web.Data.Models.LiveLessonMission;
+namespace IIG.Application.Models;
 
 public class LiveLessonMissionPronunciationRequest
 {

@@ -1,6 +1,6 @@
-﻿using IIG.Web.Data.Models.Practices.WebUserUnitTestChoose;
+﻿using IIG.Application.Models.WebUserUnitTestChoose;
 
-namespace IIG.Web.Data.Models.Practices.UnitTest;
+namespace IIG.Application.Models.UnitTest;
 public class UnitTestSubmitRequest
 {
     public List<AnswerSubmitRequest> AnswerSubmitRequest { get; set; }

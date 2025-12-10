@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace IIG.Web.Data.Models.Practices.Dictionary;
+namespace IIG.Application.Models.Dictionary;
 public class MyDictionaryTranslationDto : BaseConcreteTranslation
 {
     public Guid DictionaryId { get; set; }

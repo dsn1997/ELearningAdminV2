@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.Practices.Assessment;
+﻿namespace IIG.Application.Models.Assessment;
 
 public class AssessmentSeeAnswerRequest
 {

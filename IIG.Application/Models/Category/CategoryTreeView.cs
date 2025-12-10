@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Enums;
 
-namespace IIG.Web.Data.Models.Category;
+namespace IIG.Application.Models;
 
 public class CategoryTreeView
 {

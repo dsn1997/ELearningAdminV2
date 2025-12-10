@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.Enums;
 
-namespace IIG.Web.Data.Models.MockTests.MockTestSection;
+namespace IIG.Application.Models.MockTestSection;
 
 public class MockTestSectionDto
 {

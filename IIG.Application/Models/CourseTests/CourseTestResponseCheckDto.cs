@@ -1,8 +1,8 @@
 ﻿using IIG.Core.Common.Enums;
 using IIG.Core.Common.Models.SpeakingAndWriting;
-using IIG.Web.Data.Models.MockTests.MockTestSection;
+using IIG.Application.Models.MockTestSection;
 
-namespace IIG.Web.Data.Models.CourseTests
+namespace IIG.Application.Models
 {
 
     public class CourseTestResponseCheckDto

@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models.LiveClassType;
+﻿namespace IIG.Application.Models;
 public class LiveClassTypeDetailModel
 {
     public Guid Id { get; set; }
