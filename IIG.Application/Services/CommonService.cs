@@ -36,12 +36,11 @@ namespace IIG.Application.Services
 
         public async Task<List<Tag>> GetAllTagsAsync()
         {
-            var id = await _tagService.InsertTag("TagTest1");
+            var id = await _tagService.InsertTag("TagTest2");
             var tags = await _tagRepos.FirstOrDefaultAsync(p=>p.Id == id);
             await using (var uow = _unitOfWorkManager.Begin())
             {
-                var tag2 = await _tagRepos.FirstOrDefaultAsync(p => p.Id == id);
-
+                 await _tagService.InsertTag("TagTest3");
             }
             return new List<Tag>();
         }

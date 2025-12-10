@@ -56,7 +56,7 @@ namespace IIG.EntityFrameworkCore.EntityFramework.UnitOfWork
             }
         }
 
-        public  void SaveChange(Guid uowId, CancellationToken cancellationToken = default)
+        public  void SaveChange(Guid uowId)
         {
             var keys = _txs.Keys.Where(k => k.UowId == uowId).ToList();
             foreach (var key in keys)
