@@ -7,15 +7,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Services\.Net\Assessment\AssessmentService.cs" />
+    <Compile Include="Services\.Net\Assessment\IAssessmentService.cs" />
+    <Compile Include="Services\.Net\FileService\FileService.cs" />
+    <Compile Include="Services\.Net\FileService\IFileService.cs" />
+    <Compile Include="Services\.Net\FileType\FileTypeService.cs" />
+    <Compile Include="Services\.Net\FileType\IFileTypeService.cs" />
+    <Compile Include="Services\.Net\FileUpload\FileUploaderService.cs" />
+    <Compile Include="Services\.Net\FileUpload\IFileUploaderService.cs" />
+    <Compile Include="Services\.Net\KeyCodeAnswer\IKeyCodeAnswerService.cs" />
+    <Compile Include="Services\.Net\KeyCodeAnswer\KeyCodeAnswerService.cs" />
+    <Compile Include="Services\.Net\MockTest\IMocktestService.cs" />
+    <Compile Include="Services\.Net\MockTest\MockTestService.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.3.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\IIG.Core\IIG.Core.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\Net\" />
   </ItemGroup>
 
 </Project>

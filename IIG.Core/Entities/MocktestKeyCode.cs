@@ -44,7 +44,7 @@ namespace IIG.Core.Entities
         public string CourseStudyId { get; set; }
         public string CourseClassId { get; set; }
 
-        public virtual Mocktest MocktestIdCloneNavigation { get; set; }
+        public virtual Mocktest Mocktest { get; set; }
         public virtual KeycodeResult KeycodeResult { get; set; }
         public virtual ICollection<CourseScoring> CourseScorings { get; set; }
         public virtual ICollection<KeycodeChoose> KeycodeChooses { get; set; }

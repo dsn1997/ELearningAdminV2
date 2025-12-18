@@ -25,4 +25,6 @@ public class MockTestKeyCodeDetailDto
     public DateTime? Modified { get; set; }
     public Guid? Cookie { get; set; }
     public bool? IsAutoGenerate { get; set; }
+    public Guid? MockTestTypeId { get; set; }
+    public Guid? MockTestObjectId { get; set; }
 }

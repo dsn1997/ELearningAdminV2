@@ -24,4 +24,13 @@ public abstract class BasePaginationRequest<T> where T : Enum
             return Keyword.TranslateToFullTextSearchQuery();
         }
     }
+
+    [JsonIgnore]
+    public string KeywordFullTextSearch
+    {
+        get
+        {
+            return $"%{Keyword}%";
+        }
+    }
 }

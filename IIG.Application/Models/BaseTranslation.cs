@@ -1,4 +1,4 @@
-﻿namespace IIG.Web.Data.Models
+﻿namespace IIG.Application.Models
 {
     public abstract class BaseTranslation<T>
     {

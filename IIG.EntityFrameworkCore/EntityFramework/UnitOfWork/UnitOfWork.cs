@@ -34,6 +34,13 @@ namespace IIG.EntityFrameworkCore.EntityFramework.UnitOfWork
             _completed = true;
         }
 
+        public async Task SaveChangesAsync()
+        {
+            // Commit any active transactions created under this UoW
+            await _transactionProvider.SaveChangeAsync(Id);
+            _completed = true;
+        }
+
         public async ValueTask DisposeAsync()
         {
             if (_disposed) return;

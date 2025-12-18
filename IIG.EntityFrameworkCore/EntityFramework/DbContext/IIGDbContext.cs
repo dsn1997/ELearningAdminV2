@@ -3507,7 +3507,7 @@ namespace IIG.Core.Entities
 
                 entity.Property(e => e.WebUserId).HasColumnName("web_user_id");
 
-                entity.HasOne(d => d.MocktestIdCloneNavigation)
+                entity.HasOne(d => d.Mocktest)
                     .WithMany(p => p.MocktestKeyCodes)
                     .HasForeignKey(d => d.MocktestIdClone);
             });

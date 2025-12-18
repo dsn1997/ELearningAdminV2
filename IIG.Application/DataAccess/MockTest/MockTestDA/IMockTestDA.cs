@@ -12,5 +12,5 @@ public interface IMockTestDA
     Task<MockTestDetailModel> GetDetailByIdAsync(Guid mockTestId, DateTime? publishedAt = null);
     Task<MockTestPublicInfoModel> GetPublicInfoAsync(Guid mockTestId);
     Task StartedDoingAnswerAsync(StartedDoingAnswerModel model);
-    Task UpdateRegistrationTokenKeyCode(string keyCode, string registrationToken);
+    //Task UpdateRegistrationTokenKeyCode(string keyCode, string registrationToken);
 }

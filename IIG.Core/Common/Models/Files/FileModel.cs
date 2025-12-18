@@ -1,5 +1,8 @@
-﻿namespace IIG.Core.Common.Models.Files
+﻿using IIG.Core.Entities;
+
+namespace IIG.Core.Common.Models.Files
 {
+    [AutoMapper.AutoMap(typeof(Entities.File))]
     public class FileModel : BaseEntity
     {
         public Guid Id { get; set; }

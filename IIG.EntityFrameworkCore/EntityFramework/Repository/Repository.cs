@@ -5,6 +5,7 @@ using IIG.Core.Interface.UnitOfWork;
 using IIG.Core.Repository;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Storage;
 using System;
 using System.Collections.Concurrent;
@@ -37,7 +38,7 @@ namespace IIG.EntityFrameworkCore.EntityFramework.Repository
                 ?? throw new Exception("Repository must run inside UoW.");
 
             return _transactionProvider.GetOrCreate(uow.Id, _dbContextFactory);
-          
+
         }
 
 
@@ -97,7 +98,7 @@ namespace IIG.EntityFrameworkCore.EntityFramework.Repository
             return entity;
         }
 
-        public virtual async Task InsertRangeAsync(List<TEntity>entities)
+        public virtual async Task InsertRangeAsync(List<TEntity> entities)
         {
             // ensure we are using the transaction for this UoW
             var table = await GetTableAsync();
@@ -107,7 +108,10 @@ namespace IIG.EntityFrameworkCore.EntityFramework.Repository
         public TEntity Update(TEntity entityToUpdate)
         {
             var table = GetTable();
-            table.Update(entityToUpdate);
+            if (table.Entry(entityToUpdate).State == EntityState.Detached)
+            {
+                table.Attach(entityToUpdate);
+            }
             table.Entry(entityToUpdate).State = EntityState.Modified;
 
             return entityToUpdate;
@@ -119,8 +123,36 @@ namespace IIG.EntityFrameworkCore.EntityFramework.Repository
             entityToUpdate = Update(entityToUpdate);
             return Task.FromResult(entityToUpdate);
         }
+        public async Task<int> ExecuteUpdateAsync(Expression<Func<TEntity, bool>> predicate, Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> setPropertyCalls,CancellationToken cancellationToken = default)
+        {
+            var table = await GetTableAsync();
+            var now = DateTime.UtcNow;
 
-       
+            Expression<Func<SetPropertyCalls<TEntity>, SetPropertyCalls<TEntity>>> finalSetter;
+            if (typeof(IModifiedAudited).IsAssignableFrom(typeof(TEntity)))
+            {
+                finalSetter = setters => setPropertyCalls.Compile()
+                    .Invoke(setters)
+                    .SetProperty(
+                        e => ((IModifiedAudited)e).Modified,
+                        now
+                    );
+            }
+            else
+            {
+                finalSetter = setPropertyCalls;
+            }
+            return await table.Where(predicate).ExecuteUpdateAsync(finalSetter, cancellationToken);
+        }
+        public async Task DeleteAsync(object id)
+        {
+            var entityToDelete = await GetByIdAsync(id);
+            if (entityToDelete == null)
+            {
+                throw new Exception($"not found entity id: {id}");
+            }
+            await DeleteAsync(entityToDelete);
+        }
         public virtual void Delete(TEntity entityToDelete)
         {
             var table = GetTable();
@@ -159,7 +191,7 @@ namespace IIG.EntityFrameworkCore.EntityFramework.Repository
             else
             {
                 // Delete cứng
-                 query.ExecuteDelete();
+                query.ExecuteDelete();
             }
         }
 
@@ -233,6 +265,8 @@ namespace IIG.EntityFrameworkCore.EntityFramework.Repository
             }
             return 0;
         }
+
+
     }
 
 }

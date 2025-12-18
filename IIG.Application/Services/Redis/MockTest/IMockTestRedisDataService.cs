@@ -1,7 +1,7 @@
 ﻿using IIG.Core.Common.MongoDataModels.MockTests;
 using IIG.Core.Entities;
 
-namespace IIG.Web.BL.Services.Interfaces;
+namespace IIG.Application.Services;
 
 public interface IMockTestRedisDataService
 {

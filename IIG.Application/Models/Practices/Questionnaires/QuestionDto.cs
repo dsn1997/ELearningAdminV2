@@ -38,7 +38,7 @@ namespace IIG.Application.Models.Questionnaires
 
         public string WordEnglish { get; set; }
 
-        public EQuestionTypeOfWord TypeOfWord { get; set; }
+        public EQuestionTypeOfWord? TypeOfWord { get; set; }
 
         public string WordPhonetic { get; set; }
 

@@ -22,7 +22,6 @@ ServiceCoreExtensions.AddServiceCoreConfig(builder.Services, builder.Configurati
 AppSettings.Instance.SetConfiguration(builder.Configuration);
 builder.Services.AddDbContextFactory<IIGDbContext>(opts => opts.UseSqlServer(AppSettings.Instance.Get("DbConnectionStrings:SqlServerConnection", "")));
 
-// Register transactional UoW kernel
 builder.Services.AddScoped<IActiveTransactionProvider, ActiveTransactionProvider>();
 builder.Services.AddScoped<IUnitOfWorkManager, UnitOfWorkManager>(); 
 
@@ -34,6 +33,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 

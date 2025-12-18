@@ -41,10 +41,22 @@ public interface IRedisGenericCollectionRepository<TKey, T> : IRedisGenericRepos
     Task<bool> DeleteRange(TKey key, Func<T, bool> predicate);
 }
 
+public interface IRedisGenericCollectionRepository<T> : IRedisGenericRepository<string, IEnumerable<T>> where T : class
+{
+    Task<IEnumerable<T>> GetListItem(string key, Func<T, bool> predicate);
+    Task<T> GetFirstOrDefault(string key, Func<T, bool> predicate);
+    Task AddItem(string key, T item);
+    Task AddItem(string key, T item, int second);
+    Task<bool> UpdateItem(string key, Func<T, bool> predicate, Action<T> updateAction);
+
+    Task<bool> DeleteItem(string key, Func<T, bool> predicate);
+    Task<bool> DeleteRange(string key, Func<T, bool> predicate);
+}
+
 public interface IRedisGenericFactory
 {
     IRedisGenericRepository<T> Create<T>(string prefix = "") where T : class;
-    IRedisGenericCollectionRepository<string, T> CreateCollection<T>(string prefix = "") where T : class;
+    IRedisGenericCollectionRepository<T> CreateCollection<T>(string prefix = "") where T : class;
 }
 
 

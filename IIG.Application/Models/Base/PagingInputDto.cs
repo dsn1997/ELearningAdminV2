@@ -2,7 +2,7 @@
 
 using static IIG.Core.Common.ConfigureModels.Constants;
 
-namespace IIG.Web.Data.Models
+namespace IIG.Application.Models
 {
     public class ResponseData
     {

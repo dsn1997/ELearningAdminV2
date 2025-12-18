@@ -10,6 +10,7 @@ namespace IIG.Core.Interface
         Guid Id { get; }
         IUnitOfWork Outer { get; } // nếu nested
         Task CompleteAsync();
+        Task SaveChangesAsync();
         bool IsCompleted { get; }
 
         // DataLoader per UoW (simple)

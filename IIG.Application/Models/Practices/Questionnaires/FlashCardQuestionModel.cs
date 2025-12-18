@@ -7,7 +7,7 @@ public class FlashCardQuestionModel
 
     public string WordEnglish { get; set; }
 
-    public EQuestionTypeOfWord TypeOfWord { get; set; }
+    public EQuestionTypeOfWord? TypeOfWord { get; set; }
 
     public string WordPhonetic { get; set; }
 

@@ -119,7 +119,7 @@ public class RedisGenericRepository<T> : IRedisGenericRepository<T> where T : cl
     }
 }
 
-public class RedisGenericCollectionRepository<TItem> : RedisGenericRepository<IEnumerable<TItem>>, IRedisGenericCollectionRepository<string,TItem> where TItem : class
+public class RedisGenericCollectionRepository<TItem> : RedisGenericRepository<IEnumerable<TItem>>, IRedisGenericCollectionRepository<TItem> where TItem : class
 {
     private readonly IConnectionMultiplexer _redisDb;
 
@@ -219,7 +219,7 @@ public class RedisGenericFactory : IRedisGenericFactory
         }
         return redisService;
     }
-    public IRedisGenericCollectionRepository<string, TItem> CreateCollection<TItem>(string prefix = "") where TItem : class
+    public IRedisGenericCollectionRepository<TItem> CreateCollection<TItem>(string prefix = "") where TItem : class
     {
         var redisService = new RedisGenericCollectionRepository<TItem>(_distributedCacheProvider, _redisDb);
         if (!string.IsNullOrEmpty(prefix))
@@ -228,5 +228,7 @@ public class RedisGenericFactory : IRedisGenericFactory
         }
         return redisService;
     }
+
+
 
 }

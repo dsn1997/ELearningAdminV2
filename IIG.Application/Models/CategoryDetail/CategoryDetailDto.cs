@@ -2,7 +2,7 @@
 using IIG.Application.Models;
 using System.ComponentModel.DataAnnotations;
 
-namespace IIG.Web.Data.Models;
+namespace IIG.Application.Models;
 
 public class Menu_CategoryDetailDto
 {

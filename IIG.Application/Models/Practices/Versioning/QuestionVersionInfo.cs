@@ -34,7 +34,7 @@ public class QuestionVersionInfo
 
     public string WordEnglish { get; set; }
 
-    public EQuestionTypeOfWord TypeOfWord { get; set; }
+    public EQuestionTypeOfWord? TypeOfWord { get; set; }
 
     public string WordPhonetic { get; set; }
 
@@ -56,7 +56,7 @@ public class QuestionVersionInfo
 
     [JsonIgnore]
     public string MatchingJson { get; set; }
-    private string SampleTemplateJsonObject;
+    public string SampleTemplateJsonObject;
     public List<SampleTemplateViewModel> SampleTemplateViewModels { get { return SampleTemplateJsonObject.ConvertSampleTemplate<SampleTemplateViewModel>()?.OrderBy(x => x?.SortOrder ?? -1)?.ToList(); } }
 
     public SubmittedQuestionModel SubmittedQuestionModel { get; set; }
