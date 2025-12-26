@@ -46,7 +46,7 @@ namespace IIG.Application.BackgroudJob.RabbitMQ
 
             foreach (var listener in listeners)
             {
-               await  listener.RegisterAsync();
+               await  listener.RegisterAsync(stoppingToken);
             }
 
             while (!stoppingToken.IsCancellationRequested)

@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using IIG.Application.Data;
 using IIG.Core.Common.ConfigureModels;
+using IIG.Core.Common.Models;
 using IIG.Core.Common.Models.SpeakingAndWriting;
 using IIG.Core.Common.MongoDataModels;
 using IIG.Core.Providers.Interfaces;
@@ -48,9 +49,9 @@ public partial class QuestionaireRedisDataService : IQuestionaireRedisDataServic
     {
         _logger = logger;
         _httpContextAccessor = httpContextAccessor;
-        _mongoQuestionnaireRepos = mongoQuestionnaireService;
-        _mongoLeftSectionRepos = mongoLeftSectionService;
-        _mongoQuestionRepos = mongoQuestionService;
+        _mongoQuestionnaireRepos = mongoQuestionnaireRepos;
+        _mongoLeftSectionRepos = mongoLeftSectionRepos;
+        _mongoQuestionRepos = mongoQuestionRepos;
         _mapper = mapper;
         _fileService = fileService;
         _questionnaireDA = questionnaireDA;

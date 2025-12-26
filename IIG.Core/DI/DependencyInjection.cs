@@ -8,6 +8,7 @@ using IIG.Core.Providers.MongoDbProvider.Infrastructure;
 using IIG.Core.Providers.RabbitMQProvider;
 using IIG.Core.Providers.RabbitMQProvider.Impls;
 using IIG.Core.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MongoDB.Driver;
@@ -20,11 +21,13 @@ namespace IIG.Core.DI
     {
         public static IServiceCollection AddServiceCoreConfig(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddSingleton<IRedisGenericFactory, RedisGenericFactory>();
             services.AddScoped<IStorageService, StorageServiceS3>();
             services.AddScoped<ISwiftStorageService, SwiftStorageService>();
             services.Configure<DbConnectionStringsOptions>(options=> configuration.GetSection(DbConnectionStringsOptions.DbConnectionStrings).Bind(options));
-
+            services.Configure<ApiBehaviorOptions>(options =>
+            {
+                options.SuppressModelStateInvalidFilter = true;
+            });
             AddMongoServices(services, configuration);
             AddCacheServices(services, configuration);
             AddRabbitMQServices(services, configuration);
@@ -47,23 +50,24 @@ namespace IIG.Core.DI
                 settings.SocketTimeout = TimeSpan.FromSeconds(60);
                 settings.ServerSelectionTimeout = TimeSpan.FromSeconds(30);
                 // Bật keepalive
-                settings.ClusterConfigurator = cb =>
-                {
-                    cb.ConfigureTcp(tcp => tcp.With(
-                        socketConfigurator: new Action<Socket>(socket =>
-                        {
-                            // Bật TCP KeepAlive
-                            socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, true);
+                //settings.ClusterConfigurator = cb =>
+                //{
+                //    cb.ConfigureTcp(tcp => tcp.With(
+                //        socketConfigurator: new Action<Socket>(socket =>
+                //        {
+                //            // Bật TCP KeepAlive
+                //            socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.KeepAlive, true);
 
-                            // Tuỳ OS, có thể set thêm TCP keepalive time/interval bằng P/Invoke nếu cần
-                        })
-                    ));
-                };
+                //            // Tuỳ OS, có thể set thêm TCP keepalive time/interval bằng P/Invoke nếu cần
+                //        })
+                //    ));
+                //};
 
                 return new MongoClient(settings).GetDatabase(mongoDbSettings.Value.MongoDbDatabaseName); ;
             });
 
             services.AddScoped(typeof(IMongoGenericRepository<>), typeof(MongoGenericRepository<>));
+            services.AddSingleton<IRedisGenericFactory, RedisGenericFactory>();
 
             return services;
 
@@ -85,7 +89,6 @@ namespace IIG.Core.DI
 
             services.AddSingleton<IDistributedCacheProvider, DistributedCacheProvider>();
             services.AddSingleton<IConnectionMultiplexer>(sp => ConnectionMultiplexer.Connect(appSettingOptions.RedisConnectionString));
-            services.AddScoped<IRedisGenericFactory, RedisGenericFactory>();
 
             return services;
         }
@@ -93,7 +96,8 @@ namespace IIG.Core.DI
         public static IServiceCollection AddRabbitMQServices(this IServiceCollection services, IConfiguration configuration)
         {
             services.Configure<RabbitMQSettingOptions>(options => configuration.GetSection(RabbitMQSettingOptions.RabbitSetting).Bind(options));
-            var rabbitMQOptions = new RabbitMQSettingOptions();
+            var rabbitMQOptions = configuration.GetSection(RabbitMQSettingOptions.RabbitSetting).Get<RabbitMQSettingOptions>();
+
             services.AddSingleton<IRabbitMQFactory, RabbitMQFactory>();
 
             if(rabbitMQOptions.Enabled)

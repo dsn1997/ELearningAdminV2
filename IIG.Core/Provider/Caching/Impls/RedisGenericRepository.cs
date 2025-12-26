@@ -3,6 +3,7 @@ using IIG.Core.Providers.Interfaces;
 using Microsoft.Extensions.Caching.Distributed;
 using Newtonsoft.Json;
 using StackExchange.Redis;
+using System.Collections;
 using System.Net;
 
 namespace IIG.Core.Providers.Impls;
@@ -201,34 +202,75 @@ public class RedisGenericCollectionRepository<TItem> : RedisGenericRepository<IE
 
 public class RedisGenericFactory : IRedisGenericFactory
 {
+    private static readonly object _lock = new object();
     private readonly IDistributedCacheProvider _distributedCacheProvider;
     private readonly IConnectionMultiplexer _redisDb;
-
+    private readonly Hashtable _repositoryCache;
+    private readonly Hashtable _collectionRepositoryCache;
     public RedisGenericFactory(IDistributedCacheProvider distributedCacheProvider, IConnectionMultiplexer redisDb)
     {
         _distributedCacheProvider = distributedCacheProvider;
         _redisDb = redisDb;
+        _repositoryCache = new Hashtable();
+        _collectionRepositoryCache = new Hashtable();
     }
     public IRedisGenericRepository<T> Create<T>(string prefix = "") where T : class
     {
+        string cacheKey = $"{typeof(T).FullName}:{prefix}";
 
-        var redisService = new RedisGenericRepository<T>(_distributedCacheProvider, _redisDb);
-        if (!string.IsNullOrEmpty(prefix))
+        // Kiểm tra ngoài lock (thread-safe read)
+        if (_repositoryCache.ContainsKey(cacheKey))
         {
-            redisService.ChangeKeyPrefix(prefix);
+            return (IRedisGenericRepository<T>)_repositoryCache[cacheKey];
         }
-        return redisService;
+
+        // Chỉ lock khi cần tạo mới
+        lock (_lock)
+        {
+            // Double-check
+            if (_repositoryCache.ContainsKey(cacheKey))
+            {
+                return (IRedisGenericRepository<T>)_repositoryCache[cacheKey];
+            }
+
+            var redisService = new RedisGenericRepository<T>(_distributedCacheProvider, _redisDb);
+            if (!string.IsNullOrEmpty(prefix))
+            {
+                redisService.ChangeKeyPrefix(prefix);
+            }
+            _repositoryCache[cacheKey] = redisService;
+
+            return redisService;
+        }
     }
+
     public IRedisGenericCollectionRepository<TItem> CreateCollection<TItem>(string prefix = "") where TItem : class
     {
-        var redisService = new RedisGenericCollectionRepository<TItem>(_distributedCacheProvider, _redisDb);
-        if (!string.IsNullOrEmpty(prefix))
+        string cacheKey = $"Collection:{typeof(TItem).FullName}:{prefix}";
+
+        // Kiểm tra ngoài lock (thread-safe read)
+        if (_collectionRepositoryCache.ContainsKey(cacheKey))
         {
-            redisService.ChangeKeyPrefix(prefix);
+            return (IRedisGenericCollectionRepository<TItem>)_collectionRepositoryCache[cacheKey];
         }
-        return redisService;
+
+        // Chỉ lock khi cần tạo mới
+        lock (_lock)
+        {
+            // Double-check
+            if (_collectionRepositoryCache.ContainsKey(cacheKey))
+            {
+                return (IRedisGenericCollectionRepository<TItem>)_collectionRepositoryCache[cacheKey];
+            }
+
+            var redisService = new RedisGenericCollectionRepository<TItem>(_distributedCacheProvider, _redisDb);
+            if (!string.IsNullOrEmpty(prefix))
+            {
+                redisService.ChangeKeyPrefix(prefix);
+            }
+            _collectionRepositoryCache[cacheKey] = redisService;
+
+            return redisService;
+        }
     }
-
-
-
 }

@@ -56,7 +56,7 @@ public class LeftSectionDA : ILeftSectionDA
 
     public async Task<List<Guid>> GetListIdsByQuestionnaireIdAsync(Guid questionnaireId)
     {
-        return await _iIGLmsdbContext.LeftSections.Where(ls => ls.QuestionnaireId == questionnaireId)
+        return await _leftSectionRepos.GetAll().Where(ls => ls.QuestionnaireId == questionnaireId)
             .OrderBy(ls => ls.SortOrder)
             .Select(ls => ls.Id).
             ToListAsync();

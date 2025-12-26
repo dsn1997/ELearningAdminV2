@@ -9,6 +9,7 @@ using IIG.Core.Base;
 using IIG.Core.Common.ConfigureModels;
 using IIG.Core.Common.Enums;
 using IIG.Core.Common.ErrorHandling;
+using IIG.Core.Common.Models.SpeakingAndWriting;
 using IIG.Core.Common.MongoDataModels.Keycodes;
 using IIG.Core.Common.MongoDataModels.MockTests;
 using IIG.Core.Entities;
@@ -63,7 +64,7 @@ public class MockTestService : IMockTestService
                //, ISWScoringBiz sWScoringBiz,
                IMockTestRedisDataService mockTestDataService,
                IMockTestKeyCodeRedisDataService mockTestKeyCodeDataService,
-               //        IQuestionaireRedisDataService questionaireDataService,
+               IQuestionaireRedisDataService questionaireDataService,
                IRabbitMQProducer rabbitMQProducer
        )
     {
@@ -83,7 +84,7 @@ public class MockTestService : IMockTestService
         //_sWScoringBiz = sWScoringBiz;
         _mockTestDataService = mockTestDataService;
         _mockTestKeyCodeDataService = mockTestKeyCodeDataService;
-        //_questionaireDataService = questionaireDataService;
+        _questionaireDataService = questionaireDataService;
         _rabbitMQProducer = rabbitMQProducer;
         //_distributedCacheProvider = distributedCacheProvider;
     }
@@ -523,12 +524,12 @@ public class MockTestService : IMockTestService
             var startedDoingModelAdd = _mapper.Map<StartedDoingAnswerModel>(dumpModelAdd);
 
             //Send to rabbitMQ to execute update mongoDB and SQL
-            //_rabbitMQProducer.SendMessage(new RabbitMQMockTestActionModel()
-            //{
-            //    Action = RabbitMQMockTestAction.MockTestKeyCode_StartDoingTest,
-            //    KeyCode = request.KeyCode,
-            //    Data = JsonConvert.SerializeObject(request)
-            //}, Constants.RabbitMQ.TopicMockTestRedisToMongo, Constants.RabbitMQ.QueueMockTestRedisToMongoRoutingkey);
+            _rabbitMQProducer.SendMessage(new RabbitMQMockTestActionModel()
+            {
+                Action = RabbitMQMockTestAction.MockTestKeyCode_StartDoingTest,
+                KeyCode = request.KeyCode,
+                Data = JsonConvert.SerializeObject(request)
+            }, Constants.RabbitMQ.TopicMockTestRedisToMongo, Constants.RabbitMQ.QueueMockTestRedisToMongoRoutingkey);
 
             response = _mapper.Map<StartedDoingAnswerResponse>(dumpModelAdd);
 
@@ -595,21 +596,23 @@ public class MockTestService : IMockTestService
         dumpModel.MockTestMenu = mockTestUpdate.MockTestMenu;
 
         if (string.IsNullOrEmpty(dumpModel.MockTestName))
+        {
             dumpModel.MockTestName = await _appFactory.Repository<MocktestTranslation>().GetAll()
-                                                                                         .Where(p => p.MocktestId == mockTestKeyCode.MocktestId && p.LanguageCode == languageCode)
-                                                                                         .Select(p => p.Name)
-                                                                                         .FirstOrDefaultAsync();
-
+                                                                                        .Where(p => p.MocktestId == mockTestKeyCode.MocktestId && p.LanguageCode == languageCode)
+                                                                                        .Select(p => p.Name)
+                                                                                        .FirstOrDefaultAsync();
+        }    
+           
         await _mockTestKeyCodeDataService.InsertOrUpdateKeyCodeAsync(request.KeyCode, dumpModel, timeCache);
 
 
         //Send to rabbitMQ to execute update mongoDB and SQL
-        //_rabbitMQProducer.SendMessage(new RabbitMQMockTestActionModel()
-        //{
-        //    Action = RabbitMQMockTestAction.MockTestKeyCode_StartDoingTest,
-        //    KeyCode = request.KeyCode,
-        //    Data = JsonConvert.SerializeObject(request)
-        //}, Constants.RabbitMQ.TopicMockTestRedisToMongo, Constants.RabbitMQ.QueueMockTestRedisToMongoRoutingkey);
+        _rabbitMQProducer.SendMessage(new RabbitMQMockTestActionModel()
+        {
+            Action = RabbitMQMockTestAction.MockTestKeyCode_StartDoingTest,
+            KeyCode = request.KeyCode,
+            Data = JsonConvert.SerializeObject(request)
+        }, Constants.RabbitMQ.TopicMockTestRedisToMongo, Constants.RabbitMQ.QueueMockTestRedisToMongoRoutingkey);
 
         //verify Request info
         var requestModel = new MockTestKeyCodeBaseRequest
@@ -634,79 +637,6 @@ public class MockTestService : IMockTestService
                                                    .OrderByDescending(x => x.SubmittedDate)
                                                    .FirstOrDefaultAsync();
         }
-
-        if (response.MockTestMenu.Sections.Any())
-        {
-            foreach (var mckSection in response.MockTestMenu.Sections)
-            {
-                if (!mckSection.Parts.Any())
-                    continue;
-
-                foreach (var mckPart in mckSection.Parts)
-                {
-                    if (!mckPart.Questionnaires.Any())
-                        continue;
-
-                    var questionnaires = mckPart.Questionnaires.OrderBy(x => x.SortOrder).ToList();
-
-                    foreach (var questionnaire in questionnaires)
-                    {
-                        if (!questionnaire.Questions.Any())
-                            continue;
-
-                        var questionChooses = courseScoringInfo?.SpeakingWritingChooses
-                                                   .Where(x => questionnaire.Id == x.QuestionnaireId &&
-                                                               x.MocktestPartId == mckPart.Id
-                                                        )
-                                                   .Select(x => new { x.QuestionId, x.QuestionnaireId, x.MocktestPartId, x.WritingAnswer, x.RecordingFileId });
-
-                        var questions = questionnaire.Questions.OrderBy(x => x.SortOrder).ToList();
-                        var userChoose = await _appFactory.Repository<KeycodeChoose>().GetAll()
-                            .Where(x => x.MocktestPartId == mckPart.Id && x.Keycode == request.KeyCode)
-                            .Select(x => new { x.QuestionId, x.MocktestPartId })
-                            .ToListAsync();
-
-
-                        foreach (var question in questions)
-                        {
-                            var questionInfo = questionChooses?.FirstOrDefault(x => x.QuestionId == question.Id &&
-                                                                    x.QuestionnaireId == questionnaire.Id &&
-                                                                    x.MocktestPartId == mckPart.Id
-                                                                );
-
-                            var qInfo = userChoose.FirstOrDefault(x => x.QuestionId == question.Id && x.MocktestPartId == mckPart.Id);
-
-                            var status = EAnswerStatus.NotAnswered;
-                            if (qInfo is null)
-                            {
-                                if (questionInfo is null)
-                                {
-                                    status = EAnswerStatus.NotAnswered;
-                                }
-                                else
-                                {
-                                    status = (!string.IsNullOrEmpty(questionInfo.WritingAnswer) || questionInfo.RecordingFileId.HasValue) ?
-                                                EAnswerStatus.Correct :
-                                                EAnswerStatus.InCorrect;
-                                }
-                                question.Status = status;
-
-                            }
-                            else
-                            {
-                                question.Status = EAnswerStatus.InCorrect;
-                            }
-
-                            //question.Status = questionInfo == null ? EAnswerStatus.NotAnswered :
-                            //                   (!string.IsNullOrEmpty(questionInfo.WritingAnswer) || questionInfo.RecordingFileId.HasValue) ?
-                            //                    EAnswerStatus.Correct :
-                            //                    EAnswerStatus.InCorrect;
-                        }
-                    }
-                }
-            }
-        }
-
         return response;
     }
 
@@ -995,7 +925,7 @@ public class MockTestService : IMockTestService
 
 
         // Truy vấn trả lời đã nộp từ SQL Server
-        var submittedAnswerTask = _iIGLmsdbContext.SpeakingWritingChooses
+        var submittedAnswerTask = _appFactory.Repository<SpeakingWritingChoose>().GetAll()
                                                   .Include(x => x.CourseScoring)
                                                   .Include(x => x.LiveClassScoring)
                                                   .Include(x => x.SpeakingWritingResult)
@@ -1004,7 +934,7 @@ public class MockTestService : IMockTestService
                                                   .Select(x => new
                                                   {
                                                       x.ScoringType,
-                                                      Status = x.CourseScoring != null ? x.CourseScoring.Status : x.LiveClassScoring.Status,
+                                                      Status = x.CourseScoring != null ? (int?)x.CourseScoring.Status : x.LiveClassScoring.Status,
                                                       x.WritingAnswer,
                                                       x.RecordingFileId,
                                                       x.QuestionId,

@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace IIG.Core.Providers.BackgroudJob
 {
-    public interface IRabbitListener
+    public interface IRabbitListener : IDisposable
     {
-        Task RegisterAsync();
+        Task RegisterAsync(CancellationToken token);
     }
 }

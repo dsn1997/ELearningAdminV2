@@ -44,7 +44,7 @@ namespace IIG.Core.Providers.BackgroudJob
 
             foreach (var listener in listeners)
             {
-               await  listener.RegisterAsync();
+               await  listener.RegisterAsync(stoppingToken);
             }
 
             while (!stoppingToken.IsCancellationRequested)

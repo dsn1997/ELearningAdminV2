@@ -12,6 +12,7 @@ public class MgMockTestKeyCodeModel : Document
     public string Browser { get; set; }
     public string ClientIp { get; set; }
     public int TimeRemaining { get; set; }
+    public bool? IsAutoGenerate { get; set; }
     public Guid? Cookie { get; set; }
     public Guid MockTestId { get; set; }
     public DateTime? StartedDoingExamDate { get; set; }

@@ -9,6 +9,8 @@ using Microsoft.AspNetCore.RateLimiting;
 using static IIG.Core.Common.ConfigureModels.Constants;
 using IIG.Application.Models;
 using IIG.Application.Services;
+using IIG.Application.Models.Keycodes;
+using IIG.Application.Models.Questionnaires;
 
 namespace IIG.Web.Api.Controllers;
 
@@ -43,12 +45,12 @@ public class MockTestController : BaseController
         return await _mockTestBiz.GetMocktestStructureAsync(keyCode);
     }
 
-    //[HttpPost("started-doing-answer")]
-    ////[DisableRateLimiting]
-    //public async Task<StartedDoingAnswerResponse> StartDoingAnswerAsync(StartedDoingAnswerRequest request)
-    //{
-    //    return await _mockTestBiz.StartDoingAnswerAsync(request);
-    //}
+    [HttpPost("started-doing-answer")]
+    //[DisableRateLimiting]
+    public async Task<StartedDoingAnswerResponse> StartDoingAnswerAsync(StartedDoingAnswerRequest request)
+    {
+        return await _mockTestBiz.StartDoingAnswerAsync(request);
+    }
 
     //[HttpPost("submit-mocktest/{keyCode}")]
     ////[DisableRateLimiting]
@@ -71,40 +73,40 @@ public class MockTestController : BaseController
     //    await _keyCodeAnswerService.SubmitMockTestIternaForOldDatalAsync();
     //}
 
-    //[HttpPost("mark-question")]
-    ////[DisableRateLimiting]
-    //public async Task MarkQuestionsTask(MarkQuestionRequest request)
-    //{
-    //    await _mockTestBiz.MarkQuestionsTask(request);
-    //}
+    [HttpPost("mark-question")]
+    //[DisableRateLimiting]
+    public async Task MarkQuestionsTask(MarkQuestionRequest request)
+    {
+        await _mockTestBiz.MarkQuestionsTask(request);
+    }
 
-    //[HttpPost("save-answer")]
-    ////[DisableRateLimiting]
-    //public async Task SaveAnswerAsync([FromBody] SaveAnswerRequest request)
-    //{
-    //    await _mockTestBiz.SaveAnswerAsync(request);
-    //}
+    [HttpPost("save-answer")]
+    //[DisableRateLimiting]
+    public async Task SaveAnswerAsync([FromBody] SaveAnswerRequest request)
+    {
+        await _mockTestBiz.SaveAnswerAsync(request);
+    }
 
-    //[HttpGet("mocktest-menu")]
-    ////[DisableRateLimiting]
-    //public async Task<MgMockTestMenuModel> GetMockTestMenuAsync([FromQuery] MockTestKeyCodeBaseRequest request)
-    //{
-    //    return await _mockTestBiz.GetMockTestMenuAsync(request);
-    //}
+    [HttpGet("mocktest-menu")]
+    //[DisableRateLimiting]
+    public async Task<MgMockTestMenuModel> GetMockTestMenuAsync([FromQuery] MockTestKeyCodeBaseRequest request)
+    {
+        return await _mockTestBiz.GetMockTestMenuAsync(request);
+    }
 
-    //[HttpGet("get-answer")]
-    ////[DisableRateLimiting]
-    //public async Task<IEnumerable<AnswerResponse>> GetAnswerAsync([FromQuery] GetAnswerRequest request)
-    //{
-    //    return await _mockTestBiz.GetAnswerAsync(request);
-    //}
+    [HttpGet("get-answer")]
+    //[DisableRateLimiting]
+    public async Task<IEnumerable<AnswerResponse>> GetAnswerAsync([FromQuery] GetAnswerRequest request)
+    {
+        return await _mockTestBiz.GetAnswerAsync(request);
+    }
 
-    //[HttpGet("get-questionnaire-detail")]
-    ////[DisableRateLimiting]
-    //public async Task<QuestionnaireDto> GetQuestionnaireDetailAsync([FromQuery] GetQuestionnaireDetailRequest request)
-    //{
-    //    return await _mockTestBiz.GetQuestionnaireDetailAsync(request);
-    //}
+    [HttpGet("get-questionnaire-detail")]
+    //[DisableRateLimiting]
+    public async Task<QuestionnaireDto> GetQuestionnaireDetailAsync([FromQuery] GetQuestionnaireDetailRequest request)
+    {
+        return await _mockTestBiz.GetQuestionnaireDetailAsync(request);
+    }
 
     //[HttpGet("streaming-play/{keycode}/{fileId}")]
     ////[DisableRateLimiting]
@@ -113,12 +115,12 @@ public class MockTestController : BaseController
     //    return await _mockTestBiz.StreamingPlayAsync(keyCode, fileId);
     //}
 
-    //[HttpGet("get-mocktest-part-detail")]
-    ////[DisableRateLimiting]
-    //public async Task<MgMockTestPartModel> GetMockTestPartDetailAsync([FromQuery] GetMockTestPartDetailRequest request)
-    //{
-    //    return await _mockTestBiz.GetMockTestPartDetailAsync(request);
-    //}
+    [HttpGet("get-mocktest-part-detail")]
+    //[DisableRateLimiting]
+    public async Task<MgMockTestPartModel> GetMockTestPartDetailAsync([FromQuery] GetMockTestPartDetailRequest request)
+    {
+        return await _mockTestBiz.GetMockTestPartDetailAsync(request);
+    }
 
     //[Authorize]
     //[HttpPost("auto-submit-mocktest-keycode")]

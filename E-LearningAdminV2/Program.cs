@@ -14,8 +14,8 @@ using System;
 
 var builder = WebApplication.CreateBuilder(args);
 
-ServiceApplicationExtensions.AddServiceApplicationConfig(builder.Services, builder.Configuration);
 ServiceCoreExtensions.AddServiceCoreConfig(builder.Services, builder.Configuration);
+ServiceApplicationExtensions.AddServiceApplicationConfig(builder.Services, builder.Configuration);
 // Add services to the container.
 
 // Add EF DbContext
