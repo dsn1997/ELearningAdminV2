@@ -39,3 +39,22 @@ public class MockTestPartStructureModel : ITotalPartTimeProperty
     public TimeSpan? TotalPartTime { get; set; }
 }
 
+public class MockTestViewResultDetailModel
+{
+    public Guid MockTestId { get; set; }
+    public IEnumerable<MockTestQuestionDetailModel> Questions { get; set; }
+}
+
+public class MockTestQuestionDetailModel
+{
+    public short? STT { get; set; }
+    public Guid QuestionId { get; set; }
+    public Guid QuestionnaireId { get; set; }
+    public bool? IsUsingAnswerAsQuestion { get; set; }
+    public string PartName { get; set; }
+    public Guid PartId { get; set; }
+    public string SectionName { get; set; }
+    public Guid SectionId { get; set; }
+    public bool? IsCorrect { get; set; }
+    public IEnumerable<string> Tags { get; set; }
+}

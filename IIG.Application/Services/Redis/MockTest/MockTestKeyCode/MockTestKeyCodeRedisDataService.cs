@@ -5,20 +5,16 @@ using IIG.Core.Common.ConfigureModels;
 using IIG.Core.Common.Enums;
 using IIG.Core.Common.MongoDataModels.Keycodes;
 using IIG.Core.Entities;
-using IIG.Core.Providers.Impls;
 using IIG.Core.Providers.Interfaces;
 using IIG.Core.Providers.MongoDbProvider.Infrastructure;
-using IIG.Core.Services.Interfaces;
-using IIG.Web.Data.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Logging;
 using StackExchange.Redis;
 
 
 
-namespace IIG.Application.Services;
+namespace IIG.Application.Services.Redis;
 
 public partial class MockTestKeyCodeRedisDataService : IMockTestKeyCodeRedisDataService
 {

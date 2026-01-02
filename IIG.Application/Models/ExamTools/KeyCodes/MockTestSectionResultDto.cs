@@ -26,6 +26,7 @@ public class MockTestSectionResultDto
     public int ToScore { get; set; }
 
     public string Comment { get; set; }
+    public Guid? RankingScoreId { get; set; }
 
     [JsonIgnore]
     public int SortOrder { get; set; }

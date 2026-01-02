@@ -1,6 +1,6 @@
 ﻿using IIG.Core.Common.MongoDataModels.MockTests;
 
-namespace IIG.Web.BL.Services.Interfaces.MockTests;
+namespace IIG.Application.Services.Mongo;
 
 public interface IMockTestDumpDataToMongoDbBiz
 {

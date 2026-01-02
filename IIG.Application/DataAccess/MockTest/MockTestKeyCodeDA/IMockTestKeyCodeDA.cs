@@ -17,6 +17,7 @@ public interface IMockTestKeyCodeDA
     Task<MockTestKeyCodeBasicDto> GetDetailByKeyCode(string code, string keyCode, DateTime? mocktestPublishedAt);
 
     //Task<IEnumerable<MockTestSectionResultDto>> GetMockTestSectionResult(IEnumerable<SectionScoreBasicDto> sectionDtos, DateTime? dateTime, DateTime? submittedDate);
+    Task<IEnumerable<MockTestSectionResultDto>> GetMockTestSectionResultV2(IEnumerable<SectionScoreBasicDto> sectionDtos, DateTime? submittedDate, DateTime? publishedAt);
 
     Task<MockTestKeyCodeDetailDto> GetKeyCodeDetailByCookieAsync(Guid cookie);
 

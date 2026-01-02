@@ -130,10 +130,15 @@ namespace IIG.Core.Common.ConfigureModels
             public class MockTestWrapperGroup
             {
                 public const string All = "Redis_MenuMockTestWrapperGroup";
+                public const string ByGroupParent = "Redis_MenuMockTestWrapperGroup_ByGroupParent";
             }
             public class MockTestWrapper
             {
                 public const string ByGroupId = "RedisCourse_MenuMockTestWrapper_ByGroupId:{0}";
+            }
+            public class MockTestWrapperKeyCode
+            {
+                public const string MockTestByUserId = "RedisMockTestWrapperKeyCode_MockTestByUserId";
             }
             public static string UnitTestRemainingTime(Guid unitTestId, Guid userId) => $"unitTestId/{unitTestId}/userId/{userId}";
         }
@@ -534,6 +539,14 @@ namespace IIG.Core.Common.ConfigureModels
                     public const string RoutingKey = "*.course.test.service.delete.data";
                     public const string PushMessagerRoutingKey = "{0}.course.test.service.delete.data";
                 }
+            }
+
+            public class MockTestWrapperKeyCode
+            {
+                public const string ExchangeMockTestRedisToMongo = "exchange.mocktest.wrapperkeycode.rtm";
+                public const string QueueMockTestRedisToMongo = "queue.mocktest.wrapperkeycode.rtm";
+                public const string QueueMockTestRedisToMongoRoutingkey = "*.mocktest.wrapperkeycode.rtm";
+                public const string PushMessageMockTestRedisToMongoRoutingkey = "{0}.mocktest.wrapperkeycode.rtm";
             }
         }
 

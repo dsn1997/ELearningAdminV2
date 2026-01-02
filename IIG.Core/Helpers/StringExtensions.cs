@@ -14,6 +14,10 @@ namespace IIG.Core.Helpers;
 public static partial class StringExtensions
 {
     private static readonly RNGCryptoServiceProvider random = new RNGCryptoServiceProvider();
+    private static JsonSerializerOptions jsonOption = new JsonSerializerOptions
+    {
+        PropertyNameCaseInsensitive = true
+    };
     public static string EnumGetDescription<T>(this T enumerationValue) where T : struct
     {
         var type = enumerationValue.GetType();
@@ -433,6 +437,7 @@ public static partial class StringExtensions
         return sb.ToString();
     }
 
+    
     public static IEnumerable<TResult> ConvertSampleTemplate<TResult>(this string sampleTemplateObject)
     {
         if (string.IsNullOrEmpty(sampleTemplateObject))
@@ -440,10 +445,7 @@ public static partial class StringExtensions
 
         try
         {
-            return JsonSerializer.Deserialize<IEnumerable<TResult>>(sampleTemplateObject, new JsonSerializerOptions
-            {
-                PropertyNameCaseInsensitive = true
-            });
+            return JsonSerializer.Deserialize<IEnumerable<TResult>>(sampleTemplateObject, jsonOption);
         }
         catch (Exception ex)
         {

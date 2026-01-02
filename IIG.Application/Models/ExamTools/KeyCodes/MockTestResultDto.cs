@@ -28,4 +28,8 @@ public class MockTestResultDto
     public ECourseScoringStatus? ScoringStatus { get; set; }
     public Guid? ScoringId { get; set; }
     public int? WatchCount { get; set; }
+    public DateTime? StartDoingDate { get; set; }
+    public DateTime? SubmittedDate { get; set; }
+    public IEnumerable<MockTestQuestionDetailModel> QuestionDetails { get; set; }
+
 }

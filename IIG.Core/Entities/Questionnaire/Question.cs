@@ -49,6 +49,8 @@ namespace IIG.Core.Entities
         public virtual ICollection<SpeakingWritingChoose> SpeakingWritingChooses { get; set; }
         public virtual ICollection<UserCourseExcersiceChoose> UserCourseExcersiceChooses { get; set; }
         public virtual ICollection<WebUserChoose> WebUserChooses { get; set; }
+        public virtual ICollection<QuestionTag> QuestionTags { get; set; }
+
         public DateTime? Deleted { get; set; }
     }
 }

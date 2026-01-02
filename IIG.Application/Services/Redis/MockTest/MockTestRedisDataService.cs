@@ -1,21 +1,16 @@
-﻿using IIG.Core.Base;
+﻿using IIG.Application.Services.Mongo;
+using IIG.Core.Base;
 using IIG.Core.Common.ConfigureModels;
-using IIG.Core.Common.MongoDataModels.Keycodes;
 using IIG.Core.Common.MongoDataModels.MockTests;
 using IIG.Core.Entities;
 using IIG.Core.Providers.Interfaces;
-using IIG.Core.Services.Interfaces;
-using IIG.Web.BL.Services.Interfaces;
-using IIG.Web.BL.Services.Interfaces.MockTests;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.Extensions.Logging;
-using Microsoft.IdentityModel.Tokens;
 
 
 
-namespace IIG.Application.Services;
+namespace IIG.Application.Services.Redis;
 
 public partial class MockTestRedisDataService : IMockTestRedisDataService
 {

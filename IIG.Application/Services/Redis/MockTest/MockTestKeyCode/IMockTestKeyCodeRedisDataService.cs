@@ -4,7 +4,7 @@ using IIG.Core.Common.MongoDataModels.Keycodes;
 using IIG.Core.Common.MongoDataModels.MockTests;
 using IIG.Core.Entities;
 
-namespace IIG.Application.Services;
+namespace IIG.Application.Services.Redis;
 
 public interface IMockTestKeyCodeRedisDataService
 {

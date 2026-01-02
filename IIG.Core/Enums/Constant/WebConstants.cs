@@ -7,7 +7,7 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace IIG.Core.Enums;
 
-public static class WebConstants
+public static partial class WebConstants
 {
     public const string RedisUserAccessCourseKey = "{0}_{1}"; // 0-userId, 1-courseId
 
@@ -23,7 +23,7 @@ public static class WebConstants
         public const string MenuBottom = "menu_bottom";
     }
 
-    public static class ValidationMessages
+    public static partial class ValidationMessages
     {
         public static class RateLimiterPolicyMessage
         {

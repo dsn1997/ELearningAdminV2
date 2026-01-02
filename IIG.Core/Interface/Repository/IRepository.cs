@@ -1,4 +1,5 @@
 ﻿
+using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using System.Linq.Expressions;
 
@@ -8,6 +9,7 @@ namespace IIG.Core.Repository
 
     public interface IRepository<TEntity> where TEntity : class
     {
+        DbSet<TEntity> GetTable();
         IQueryable<TEntity> GetAll();
 
         TEntity? GetById(object id);

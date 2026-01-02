@@ -1,23 +1,14 @@
 ﻿using AutoMapper;
 using IIG.Application.Data;
 using IIG.Application.Models;
-using IIG.Application.Models.Assessment;
 using IIG.Application.Services;
 using IIG.Core.Common.ConfigureModels;
 using IIG.Core.Common.Enums;
-using IIG.Core.Common.ErrorHandling;
-using IIG.Core.Common.Models.Files;
 using IIG.Core.Common.MongoDataModels;
 using IIG.Core.Enums;
-using IIG.Core.Helpers;
 using IIG.Core.Providers.MongoDbProvider.Infrastructure;
-using IIG.Core.Services.Interfaces;
-using IIG.Web.BL.Services.Interfaces;
 using Microsoft.AspNetCore.Http;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
-using Microsoft.IdentityModel.Tokens;
-using System.Data;
 
 namespace IIG.Web.BL.Services.Impls.Practices;
 

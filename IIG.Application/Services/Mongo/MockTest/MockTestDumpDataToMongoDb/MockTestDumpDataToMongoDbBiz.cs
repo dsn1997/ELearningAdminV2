@@ -1,10 +1,7 @@
 ﻿using AutoMapper;
-using IIG.Web.BL.Services.Interfaces.MockTests;
 using IIG.Core.Common.Enums;
 using IIG.Core.Common.ErrorHandling;
 using IIG.Core.Common.MongoDataModels.MockTests;
-
-
 using Microsoft.Extensions.Logging;
 using IIG.Core.Enums;
 using IIG.Application.Models.MockTestSection;
@@ -14,7 +11,7 @@ using IIG.Core.Base;
 using IIG.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace IIG.Application.Services;
+namespace IIG.Application.Services.Mongo;
 
 public class MockTestDumpDataToMongoDbBiz : IMockTestDumpDataToMongoDbBiz
 {

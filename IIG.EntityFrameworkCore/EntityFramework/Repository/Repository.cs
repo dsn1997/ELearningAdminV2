@@ -49,7 +49,7 @@ namespace IIG.EntityFrameworkCore.EntityFramework.Repository
 
         }
 
-        protected DbSet<TEntity> GetTable()
+        public DbSet<TEntity> GetTable()
         {
             var holder = GetOrCreateHolder();
             return holder.DbContext.Set<TEntity>();

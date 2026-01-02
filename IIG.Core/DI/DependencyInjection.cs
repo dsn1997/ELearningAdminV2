@@ -67,7 +67,6 @@ namespace IIG.Core.DI
             });
 
             services.AddScoped(typeof(IMongoGenericRepository<>), typeof(MongoGenericRepository<>));
-            services.AddSingleton<IRedisGenericFactory, RedisGenericFactory>();
 
             return services;
 
@@ -89,6 +88,7 @@ namespace IIG.Core.DI
 
             services.AddSingleton<IDistributedCacheProvider, DistributedCacheProvider>();
             services.AddSingleton<IConnectionMultiplexer>(sp => ConnectionMultiplexer.Connect(appSettingOptions.RedisConnectionString));
+            services.AddSingleton<IRedisGenericFactory, RedisGenericFactory>();
 
             return services;
         }

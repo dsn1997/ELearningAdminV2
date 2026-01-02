@@ -32,4 +32,6 @@ public class MockTestWrapperDetailDto
     public string Descriptions { get; set; }
     public Guid MockTestId { get; set; }
     public MockTestStructureWithQuestionTagModel MockTestStructure { get; set; }
+    public IEnumerable<string> Tags { get; set; }
+
 }

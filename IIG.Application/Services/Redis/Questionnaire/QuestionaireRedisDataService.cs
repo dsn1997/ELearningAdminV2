@@ -1,19 +1,13 @@
 ﻿using AutoMapper;
 using IIG.Application.Data;
-using IIG.Core.Common.ConfigureModels;
 using IIG.Core.Common.Models;
-using IIG.Core.Common.Models.SpeakingAndWriting;
 using IIG.Core.Common.MongoDataModels;
 using IIG.Core.Providers.Interfaces;
 using IIG.Core.Providers.MongoDbProvider.Infrastructure;
-using LinqKit;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
 
-
-
-namespace IIG.Application.Services;
+namespace IIG.Application.Services.Redis;
 
 public partial class QuestionaireRedisDataService : IQuestionaireRedisDataService
 {

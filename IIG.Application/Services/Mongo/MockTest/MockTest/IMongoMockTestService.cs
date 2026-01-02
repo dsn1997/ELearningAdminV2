@@ -3,7 +3,7 @@ using IIG.Core.Common.MongoDataModels.MockTests;
 using IIG.Core.Providers.MongoDbProvider.Infrastructure;
 using System.Linq.Expressions;
 
-namespace IIG.Application.Services
+namespace IIG.Application.Services.Mongo
 {
     public interface IMongoMockTestService 
     {

@@ -3,6 +3,7 @@ using IIG.Application.BackgroundJob.Dtos;
 using IIG.Application.Data;
 using IIG.Application.Models.Keycodes;
 using IIG.Application.Services;
+using IIG.Application.Services.Redis;
 using IIG.Core.Common.Enums;
 using IIG.Core.Common.MongoDataModels.Keycodes;
 using IIG.Core.Interface;
@@ -320,6 +321,8 @@ namespace IIG.Application.BackgroundJob
                                     break;
                                 }
                         }
+
+                        await uow.CompleteAsync();
                     }    
 
                 }

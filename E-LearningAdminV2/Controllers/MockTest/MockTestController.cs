@@ -1,12 +1,6 @@
 ﻿using IIG.Core.Common.MongoDataModels.Keycodes;
 using IIG.Core.Common.MongoDataModels.MockTests;
-using IIG.Web.BL.Services.Interfaces;
-using IIG.Web.BL.Services.Interfaces.MockTests;
 using Microsoft.AspNetCore.Mvc;
-using System.ComponentModel.DataAnnotations;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.RateLimiting;
-using static IIG.Core.Common.ConfigureModels.Constants;
 using IIG.Application.Models;
 using IIG.Application.Services;
 using IIG.Application.Models.Keycodes;
@@ -50,6 +44,11 @@ public class MockTestController : BaseController
     public async Task<StartedDoingAnswerResponse> StartDoingAnswerAsync(StartedDoingAnswerRequest request)
     {
         return await _mockTestBiz.StartDoingAnswerAsync(request);
+    }
+    [HttpGet("force-gc")]
+    public void ForceGC()
+    {
+        GC.Collect();
     }
 
     //[HttpPost("submit-mocktest/{keyCode}")]

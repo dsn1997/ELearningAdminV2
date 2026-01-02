@@ -1,7 +1,7 @@
 ﻿using IIG.Core.Common.MongoDataModels;
 
 
-namespace IIG.Application.Services;
+namespace IIG.Application.Services.Redis;
 
 public interface IQuestionaireRedisDataService
 {

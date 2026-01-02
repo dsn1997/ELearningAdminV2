@@ -137,6 +137,73 @@ public class MockTestKeyCodeDA : IMockTestKeyCodeDA
     //    return output;
     //}
 
+    public async Task<IEnumerable<MockTestSectionResultDto>> GetMockTestSectionResultV2(IEnumerable<SectionScoreBasicDto> sectionDtos, DateTime? submittedDate, DateTime? publishedAt)
+    {
+        publishedAt = publishedAt ?? DateTime.Now;
+        var sectionInfos = await _appFactory.Repository<MocktestSection>().GetTable().TemporalAsOf(publishedAt.Value).Where(p => sectionDtos.Select(p => p.SectionId).Contains(p.Id))
+            .Select(p => new MockTestSectionResultDto
+            {
+                SectionId = p.Id,
+                SectionName = p.Name,
+                SectionType = (EMockTestSectionType)p.Type,
+                RankingScoreId = p.RankingScoreId,
+                SortOrder = p.SortOrder,
+            }).OrderBy(p => p.SortOrder).AsNoTracking().ToListAsync();
+
+        var scoreMap = sectionDtos.ToDictionary(x => x.SectionId, x => x.Score);
+
+        foreach (var item in sectionInfos)
+        {
+            if (scoreMap.TryGetValue(item.SectionId, out var score))
+            {
+                item.ExactScore = score;
+            }
+        }
+
+        // lấy Score Details
+        var rankingScoreIds = sectionInfos.Select(x => x.RankingScoreId).Distinct().ToList();
+
+        var scoreDetails = await _appFactory.Repository<ScoreDetail>().GetTable().TemporalAsOf(submittedDate ?? DateTime.Now).Where(sd => rankingScoreIds.Contains(sd.RankingScoreId)).ToListAsync();
+
+        foreach (var item in sectionInfos)
+        {
+            var sd = scoreDetails.FirstOrDefault(x =>
+                x.RankingScoreId == item.RankingScoreId &&
+                x.ExactScore == item.ExactScore);
+
+            if (sd != null)
+            {
+                item.FromScore = sd.FromScore;
+                item.ToScore = sd.ToScore;
+            }
+        }
+
+        // Lấy Ranking Score details
+        var rankingScores = await _appFactory.Repository<RankingScore>().GetTable().TemporalAsOf(submittedDate ?? DateTime.Now).Where(rs => rankingScoreIds.Contains(rs.Id)).ToListAsync();
+
+        foreach (var item in sectionInfos)
+        {
+            var rs = rankingScores.FirstOrDefault(x => x.Id == item.RankingScoreId);
+            if (rs != null)
+            {
+                item.MinScore = rs.MinScore;
+                item.MaxScore = rs.MaxScore;
+            }
+        }
+        //lấy score comment
+        var scoreComments = await _appFactory.Repository<ScoreComment>().GetTable().TemporalAsOf(submittedDate ?? DateTime.Now).Where(sc => rankingScoreIds.Contains(sc.RankingScoreId)).ToListAsync();
+
+        foreach (var item in sectionInfos)
+        {
+            var comment = scoreComments.FirstOrDefault(sc =>
+                sc.RankingScoreId == item.RankingScoreId &&
+                sc.FromScore <= item.ExactScore &&
+                item.ExactScore <= sc.ToScore);
+
+            item.Comment = comment?.Comment;
+        }
+        return sectionInfos;
+    }
     public async Task<MockTestKeyCodeDetailDto> GetKeyCodeDetailByCookieAsync(Guid cookie)
     {
         var exist = await _appFactory.Repository<MocktestKeyCode>().GetAll().Where(f => f.Cookie == cookie && f.IsAutoGenerate != true).Select(p => new MockTestKeyCodeDetailDto
@@ -201,7 +268,7 @@ public class MockTestKeyCodeDA : IMockTestKeyCodeDA
         return mockTestKeyCode;
 
     }
-
+   
     public async Task<IEnumerable<MockTestSectionCorrectAnswerDto>> GetMockTestSectionCorrectAnswers(Guid mocktestId, IEnumerable<SectionCorrectAnswerBasic> sectionCorrectAnswerBasics, DateTime? submittedDate, DateTime? publishedAt)
     {
         var query = from mts in _appFactory.Repository<MocktestSection>().GetAll()

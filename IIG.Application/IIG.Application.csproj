@@ -17,6 +17,9 @@
     <Compile Include="Services\.Net\FileUpload\IFileUploaderService.cs" />
     <Compile Include="Services\.Net\KeyCodeAnswer\IKeyCodeAnswerService.cs" />
     <Compile Include="Services\.Net\KeyCodeAnswer\KeyCodeAnswerService.cs" />
+    <Compile Include="Services\.Net\MockTestWrapper\MockTestWrapperKeyCode\Dtos\MockTestWrapperKeyCodeDto.cs" />
+    <Compile Include="Services\.Net\MockTestWrapper\MockTestWrapperKeyCode\IMockTestWrapperKeyCodeService.cs" />
+    <Compile Include="Services\.Net\MockTestWrapper\MockTestWrapperKeyCode\MockTestWrapperKeyCodeService.cs" />
     <Compile Include="Services\.Net\MockTest\IMocktestService.cs" />
     <Compile Include="Services\.Net\MockTest\MockTestService.cs" />
   </ItemGroup>
